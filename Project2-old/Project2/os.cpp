@@ -9,6 +9,8 @@
  * @author Justin Tanner
  */
 
+#define F_CPU 16000000UL
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -610,7 +612,7 @@ static int kernel_create_task()
 	    p = dequeue(&dead_pool_queue);
 	}
 
-    stack_bottom = &(p->stack[WORKSPACE-1]);
+    stack_bottom = &(p->stack[MAXSTACK-1]);
 
     /* The stack grows down in memory, so the stack pointer is going to end up
      * pointing to the location 32 + 1 + 2 + 2 = 37 bytes above the bottom, to make
