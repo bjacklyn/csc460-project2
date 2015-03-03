@@ -42,6 +42,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../main.cpp \
 ../os.cpp \
+../tests/test002_system_queue.cpp \
 ../tests/test001_now_roll_over.cpp \
 ../tests/test000_now.cpp \
 ../trace/trace.cpp \
@@ -57,6 +58,7 @@ ASM_SRCS +=
 OBJS +=  \
 main.o \
 os.o \
+tests/test002_system_queue.o \
 tests/test001_now_roll_over.o \
 tests/test000_now.o \
 trace/trace.o \
@@ -65,6 +67,7 @@ uart/uart.o
 OBJS_AS_ARGS +=  \
 main.o \
 os.o \
+tests/test002_system_queue.o \
 tests/test001_now_roll_over.o \
 tests/test000_now.o \
 trace/trace.o \
@@ -73,6 +76,7 @@ uart/uart.o
 C_DEPS +=  \
 main.d \
 os.d \
+tests/test002_system_queue.d \
 tests/test001_now_roll_over.d \
 tests/test000_now.d \
 trace/trace.d \
@@ -81,6 +85,7 @@ uart/uart.d
 C_DEPS_AS_ARGS +=  \
 main.d \
 os.d \
+tests/test002_system_queue.d \
 tests/test001_now_roll_over.d \
 tests/test000_now.d \
 trace/trace.d \
@@ -100,6 +105,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

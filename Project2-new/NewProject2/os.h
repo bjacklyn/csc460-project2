@@ -168,6 +168,9 @@ extern "C" {
  *
  */  
 #include "stdint.h"
+
+void* get_system_queue();
+uint8_t queue_size(void* queue_ptr);
    
 /*==================================================================  
  *             T Y P E S   &   C O N S T A N T S  

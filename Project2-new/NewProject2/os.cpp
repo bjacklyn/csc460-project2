@@ -17,6 +17,7 @@
 #include "kernel.h"
 #include "error_code.h"
 #include "main.h"
+#include "trace/trace.h"
 
 /* Needed for memset */
 /* #include <string.h> */
@@ -149,15 +150,18 @@ static void kernel_dispatch(void)
 
     if(cur_task->state != RUNNING || cur_task == idle_task)
     {
-		uint16_t now = Now();
 		if(system_queue.head != NULL)
         {
             cur_task = dequeue(&system_queue);
         }
-        else if ((&periodic_queue)->head->offset < (now - (&periodic_queue)->head->last))
+        else if (periodic_queue.head != NULL)
         {
-            /* Keep running the current PERIODIC task. */
-            cur_task = dequeue(&periodic_queue);
+			uint16_t now = Now();
+			if (periodic_queue.head->offset < (now - periodic_queue.head->last))
+			{
+				/* Keep running the current PERIODIC task. */
+				cur_task = dequeue(&periodic_queue);
+			}
         }
         else if(rr_queue.head != NULL)
         {
@@ -180,7 +184,7 @@ static void kernel_dispatch(void)
  *@brief The first part of the scheduler.
  *
  * Perform some action based on the system call or timer tick.
- * Perhaps place the current process in a ready or waitng queue.
+ * Perhaps place the current process in a ready or waiting queue.
  */
 static void kernel_handle_request(void)
 {
@@ -573,7 +577,7 @@ static int kernel_create_task()
     }
 
 	/* idling "task" goes in last descriptor. */
-	if(kernel_request_create_args.level == NULL)
+	if(kernel_request_create_args.level == 0)//NULL)
 	{
 		p = &task_desc[MAXPROCESS];
 	}
@@ -606,7 +610,7 @@ static int kernel_create_task()
     /* stack_top[31] is r30. */
 	stack_top[32] = 0xEE;
     stack_top[33] = (uint8_t) _BV(SREG_I); /* set SREG_I bit in stored SREG. */
-    /* stack_top[33] is r31. */
+    /* stack_top[34] is r31. */
 
     /* We are placing the address (16-bit) of the functions
      * onto the stack in reverse byte order (least significant first, followed
@@ -750,6 +754,25 @@ static task_descriptor_t* dequeue(queue_t* queue_ptr)
     return task_ptr;
 }
 
+uint8_t queue_size(void* queue_ptr)
+{
+	task_descriptor_t* head = ((queue_t*) queue_ptr)->head;
+	uint8_t size = 0;
+	
+	while (head != NULL)
+	{
+		size++;
+		head = head->next;
+	}
+	
+	return size;
+}
+
+void* get_system_queue()
+{
+	return &dead_pool_queue;
+}
+
 
 /**
  * @brief Update the current time.
@@ -795,7 +818,7 @@ static void kernel_slow_clock(void)
  * Point of entry from the C runtime crt0.S.
  */
 void OS_Init()
-{
+{	
     int i;
 
     /* Set up the clocks */
@@ -823,7 +846,7 @@ void OS_Init()
 
 	/* Create idle "task" */
     kernel_request_create_args.f = (voidfuncvoid_ptr)idle;
-    kernel_request_create_args.level = NULL;
+    kernel_request_create_args.level = 0;//NULL;
     kernel_create_task();
 
     /* Create "main" task as SYSTEM level. */

@@ -6,6 +6,8 @@ main.cpp
 
 os.cpp
 
+tests\test002_system_queue.cpp
+
 tests\test001_now_roll_over.cpp
 
 tests\test000_now.cpp
