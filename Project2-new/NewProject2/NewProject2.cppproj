@@ -143,6 +143,21 @@
     <Compile Include="os.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="tests\test007_periodic_queue3.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test006_periodic_queue2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test005_periodic_queue1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test004_roundrobin_queue2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test003_roundrobin_queue1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="tests\test002_system_queue.cpp">
       <SubType>compile</SubType>
     </Compile>

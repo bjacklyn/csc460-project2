@@ -16,16 +16,9 @@
 enum {
 
 /** GREEN ERRORS -- Initialize time errors. */
-    
-/** PPP invalid -- Names must be in range [0 .. MAXPROCESS] */
-ERR_1_PPP_NAME_OUT_OF_RANGE,
 
 /** PERIODIC task assigned name IDLE */
 ERR_3_PERIODIC_NAMED_IDLE,
-
-/** Time interval 0 in PPP array */
-ERR_6_TIME_INTERVAL_IN_PPP_0,
-
 
 /** RED ERRORS -- Run time errors. */
 

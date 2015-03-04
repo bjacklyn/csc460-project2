@@ -42,6 +42,11 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../main.cpp \
 ../os.cpp \
+../tests/test007_periodic_queue3.cpp \
+../tests/test006_periodic_queue2.cpp \
+../tests/test005_periodic_queue1.cpp \
+../tests/test004_roundrobin_queue2.cpp \
+../tests/test003_roundrobin_queue1.cpp \
 ../tests/test002_system_queue.cpp \
 ../tests/test001_now_roll_over.cpp \
 ../tests/test000_now.cpp \
@@ -58,6 +63,11 @@ ASM_SRCS +=
 OBJS +=  \
 main.o \
 os.o \
+tests/test007_periodic_queue3.o \
+tests/test006_periodic_queue2.o \
+tests/test005_periodic_queue1.o \
+tests/test004_roundrobin_queue2.o \
+tests/test003_roundrobin_queue1.o \
 tests/test002_system_queue.o \
 tests/test001_now_roll_over.o \
 tests/test000_now.o \
@@ -67,6 +77,11 @@ uart/uart.o
 OBJS_AS_ARGS +=  \
 main.o \
 os.o \
+tests/test007_periodic_queue3.o \
+tests/test006_periodic_queue2.o \
+tests/test005_periodic_queue1.o \
+tests/test004_roundrobin_queue2.o \
+tests/test003_roundrobin_queue1.o \
 tests/test002_system_queue.o \
 tests/test001_now_roll_over.o \
 tests/test000_now.o \
@@ -76,6 +91,11 @@ uart/uart.o
 C_DEPS +=  \
 main.d \
 os.d \
+tests/test007_periodic_queue3.d \
+tests/test006_periodic_queue2.d \
+tests/test005_periodic_queue1.d \
+tests/test004_roundrobin_queue2.d \
+tests/test003_roundrobin_queue1.d \
 tests/test002_system_queue.d \
 tests/test001_now_roll_over.d \
 tests/test000_now.d \
@@ -85,6 +105,11 @@ uart/uart.d
 C_DEPS_AS_ARGS +=  \
 main.d \
 os.d \
+tests/test007_periodic_queue3.d \
+tests/test006_periodic_queue2.d \
+tests/test005_periodic_queue1.d \
+tests/test004_roundrobin_queue2.d \
+tests/test003_roundrobin_queue1.d \
 tests/test002_system_queue.d \
 tests/test001_now_roll_over.d \
 tests/test000_now.d \
@@ -105,6 +130,16 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
+
+
+
+
 
 
 

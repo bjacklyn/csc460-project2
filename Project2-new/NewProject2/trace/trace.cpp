@@ -66,7 +66,7 @@ void print_trace()
 /** 
  * Add a number to the trace array and increment the trace counter
  * 
- * @param number unisigned integer to add
+ * @param number unsigned integer to add
  */
 void add_to_trace(uint16_t number)
 {
@@ -74,7 +74,7 @@ void add_to_trace(uint16_t number)
     {
         trace_array[trace_counter] = number;
         trace_counter++;
-    }    
+    }
 }
 
 /** 

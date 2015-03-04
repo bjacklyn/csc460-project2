@@ -9,14 +9,12 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
-uint16_t v;
-
 void system_task_1() {
-	add_to_trace(1);
+	add_to_trace(10);
 }
 
 void system_task_2() {
-	add_to_trace(2);
+	add_to_trace(20);
 }
 
 void system_task_3() {
