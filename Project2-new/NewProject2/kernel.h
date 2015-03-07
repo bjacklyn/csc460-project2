@@ -118,7 +118,9 @@ struct td_struct
 	/** The last time this task ran. */
 	bool							ran_once;
 	/** The remaining number of ticks. */
-	uint16_t						ticks_remaining;
+	uint16_t						ticks_running_previous;
+	/** Ticks running without preemption. */
+	uint16_t						ticks_running_no_preemp;
 	
     /** A link to the next task descriptor in the queue holding this task. */
     task_descriptor_t*              next;

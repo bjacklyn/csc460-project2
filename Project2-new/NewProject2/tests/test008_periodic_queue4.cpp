@@ -31,7 +31,7 @@ void even_periodic() {
 		{
 			add_to_trace(count2);
 		}
-		
+
 		if (count2 == 10)
 		{
 			print_trace();

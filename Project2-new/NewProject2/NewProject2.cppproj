@@ -143,6 +143,21 @@
     <Compile Include="os.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="tests\test014_all_tasks.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test013_periodic_invalid_schedule.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test012_periodic_invalid_wcet.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test011_periodic_system_queue2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test010_periodic_system_queue1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="tests\test009_periodic_rr_queue1.cpp">
       <SubType>compile</SubType>
     </Compile>

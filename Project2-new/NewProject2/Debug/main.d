@@ -31,7 +31,12 @@ main.d main.o: .././main.cpp .././main.h .././os.h \
  .././tests/test006_periodic_queue2.cpp \
  .././tests/test007_periodic_queue3.cpp \
  .././tests/test008_periodic_queue4.cpp \
- .././tests/test009_periodic_rr_queue1.cpp
+ .././tests/test009_periodic_rr_queue1.cpp \
+ .././tests/test010_periodic_system_queue1.cpp \
+ .././tests/test011_periodic_system_queue2.cpp \
+ .././tests/test012_periodic_invalid_wcet.cpp \
+ .././tests/test013_periodic_invalid_schedule.cpp \
+ .././tests/test014_all_tasks.cpp
 
 .././main.h:
 
@@ -106,3 +111,13 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 .././tests/test008_periodic_queue4.cpp:
 
 .././tests/test009_periodic_rr_queue1.cpp:
+
+.././tests/test010_periodic_system_queue1.cpp:
+
+.././tests/test011_periodic_system_queue2.cpp:
+
+.././tests/test012_periodic_invalid_wcet.cpp:
+
+.././tests/test013_periodic_invalid_schedule.cpp:
+
+.././tests/test014_all_tasks.cpp:

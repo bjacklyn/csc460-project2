@@ -2,7 +2,7 @@
 
 /*
     Desired Trace
-    T009;1;2;3;4;5;6;7;8;9;10;
+    T009;1;1;1;1;1;5;1;1;1;1;10;...;105;
 */
 
 #include <avr/io.h>
@@ -10,12 +10,18 @@
 #include <util/delay.h>
 
 volatile uint8_t count = 1;
+volatile bool finished = false;
 
 void rr1() {
 	for(;;) {
-		add_to_trace(1);
-		_delay_ms(1);
-		Task_Next();
+		if (!finished)
+		{
+			add_to_trace(1);
+			_delay_ms(1);
+			Task_Next();
+		} else {
+			Task_Terminate();
+		}
 	}
 }
 
@@ -29,6 +35,7 @@ void periodic1() {
 		
 		if (Now() > 100)
 		{
+			finished = true;
 			Task_Create_RR(rr_print, 0);
 			break;
 		}

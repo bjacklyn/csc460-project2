@@ -150,15 +150,23 @@ static void kernel_dispatch(void)
 
     if(cur_task->state != RUNNING || cur_task == idle_task)
     {
+		uint16_t now = Now();
 		if(system_queue.head != NULL)
         {
             cur_task = dequeue(&system_queue);
         }
-        else if (periodic_queue.head != NULL && ((Now() - periodic_queue.head->last) >= periodic_queue.head->offset + periodic_queue.head->period))
+        else if (periodic_queue.head != NULL && ((now - periodic_queue.head->last) >= (periodic_queue.head->offset + periodic_queue.head->period)))
         {
 			/* Keep running the current PERIODIC task. */
 			cur_task = dequeue(&periodic_queue);
-			cur_task->last = Now();
+			
+			cur_task->last += cur_task->period + cur_task->offset;
+			cur_task->ticks_running_no_preemp = now;
+			
+			if (periodic_queue.head != NULL && ((now - periodic_queue.head->last) >= (periodic_queue.head->offset + periodic_queue.head->period))) {
+				error_msg = ERR_RUN_6_INVALID_PERIODIC_SCHEDULING;
+				OS_Abort();
+			}
         }
         else if(rr_queue.head != NULL)
         {
@@ -213,7 +221,12 @@ static void kernel_handle_request(void)
             /* If new task is SYSTEM and cur is not, then don't run old one */
             if(kernel_request_create_args.level == SYSTEM && cur_task->level != SYSTEM)
             {
-                cur_task->state = READY;
+				cur_task->state = READY;
+				if(cur_task->level == PERIODIC) {
+					cur_task->ticks_running_previous += Now() - cur_task->ticks_running_no_preemp;
+					cur_task->last -= cur_task->period;
+					enqueue(&periodic_queue, cur_task);
+				} 
             }
 
             /* If cur is RR, it might be pre-empted by a new PERIODIC. */
@@ -246,11 +259,21 @@ static void kernel_handle_request(void)
 			break;
 
 	    case PERIODIC:
+			if(((Now() - cur_task->ticks_running_no_preemp) + cur_task->ticks_running_previous) > cur_task->wcet)
+			{
+				/* error handling */
+				error_msg = ERR_RUN_3_PERIODIC_TOOK_TOO_LONG;
+				OS_Abort();
+			} else {
+				cur_task->ticks_running_previous = (uint16_t) 0;
+			}
+		
 			if (!cur_task->ran_once)
 			{
 				cur_task->ran_once = true;
 				cur_task->offset = (uint16_t) 0;
 			}
+			
 	        enqueue(&periodic_queue, cur_task);
 	        break;
 
@@ -640,6 +663,8 @@ static int kernel_create_task()
 		p->offset = kernel_request_create_args.start - kernel_request_create_args.period;
 		p->period = kernel_request_create_args.period;
 		p->wcet = kernel_request_create_args.wcet;
+		p->ticks_running_previous = (uint16_t) 0;
+		p->ticks_running_no_preemp = (uint16_t) 0;
 		p->last = (uint16_t) 0;
 		p->ran_once = false;
 	}
@@ -771,11 +796,11 @@ void* get_system_queue()
 static void kernel_update_ticker(void)
 {
     /* PORTD ^= LED_D5_RED; */
-   
+	
 	/* If Periodic task still running then error more than wcet */
 	if(cur_task != NULL && cur_task->level == PERIODIC && cur_task->state == RUNNING)
 	{
-		if ((Now() - cur_task->last) > (cur_task->offset + cur_task->period + cur_task->wcet))
+		if(((Now() - cur_task->ticks_running_no_preemp) + cur_task->ticks_running_previous) > cur_task->wcet)
 		{
 			/* error handling */
 			error_msg = ERR_RUN_3_PERIODIC_TOOK_TOO_LONG;

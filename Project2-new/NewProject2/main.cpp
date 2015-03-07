@@ -5,7 +5,7 @@
 #include "trace/trace.h"
 #include "profile.h"
 
-#define USE_TEST_008
+#define USE_TEST_014
 
 #include "tests/test000_now.cpp"
 #include "tests/test001_now_roll_over.cpp"
@@ -18,6 +18,10 @@
 #include "tests/test008_periodic_queue4.cpp"
 #include "tests/test009_periodic_rr_queue1.cpp"
 #include "tests/test010_periodic_system_queue1.cpp"
+#include "tests/test011_periodic_system_queue2.cpp"
+#include "tests/test012_periodic_invalid_wcet.cpp"
+#include "tests/test013_periodic_invalid_schedule.cpp"
+#include "tests/test014_all_tasks.cpp"
 
 #ifdef _USE_MAIN_
 void round_robin(void) { }
