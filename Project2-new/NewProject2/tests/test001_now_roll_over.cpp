@@ -18,7 +18,7 @@ extern int r_main() {
     for(j = 0; j < TRACE_ARRAY_SIZE; ++j){
         v = Now();
         add_to_trace(v);
-        _delay_ms(1);
+        _delay_ms(275);
     }	
     print_trace();
     return 0;

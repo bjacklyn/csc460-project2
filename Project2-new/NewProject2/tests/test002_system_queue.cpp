@@ -10,11 +10,11 @@
 #include <util/delay.h>
 
 void system_task_1() {
-	add_to_trace(10);
+	add_to_trace(1);
 }
 
 void system_task_2() {
-	add_to_trace(20);
+	add_to_trace(2);
 }
 
 void system_task_3() {

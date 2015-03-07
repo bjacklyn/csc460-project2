@@ -154,10 +154,11 @@ static void kernel_dispatch(void)
         {
             cur_task = dequeue(&system_queue);
         }
-        else if (periodic_queue.head != NULL && (((Now() + periodic_queue.head->offset) - periodic_queue.head->last) >= periodic_queue.head->period))
+        else if (periodic_queue.head != NULL && ((Now() - periodic_queue.head->last) >= periodic_queue.head->offset + periodic_queue.head->period))
         {
 			/* Keep running the current PERIODIC task. */
 			cur_task = dequeue(&periodic_queue);
+			cur_task->last = Now();
         }
         else if(rr_queue.head != NULL)
         {
@@ -245,7 +246,11 @@ static void kernel_handle_request(void)
 			break;
 
 	    case PERIODIC:
-			cur_task->last += cur_task->period;
+			if (!cur_task->ran_once)
+			{
+				cur_task->ran_once = true;
+				cur_task->offset = (uint16_t) 0;
+			}
 	        enqueue(&periodic_queue, cur_task);
 	        break;
 
@@ -632,10 +637,11 @@ static int kernel_create_task()
     p->level = kernel_request_create_args.level;
 	if (p->level == PERIODIC) 
 	{
-		p->offset = kernel_request_create_args.start;
+		p->offset = kernel_request_create_args.start - kernel_request_create_args.period;
 		p->period = kernel_request_create_args.period;
 		p->wcet = kernel_request_create_args.wcet;
 		p->last = (uint16_t) 0;
+		p->ran_once = false;
 	}
 	switch(kernel_request_create_args.level)
 	{
@@ -698,28 +704,18 @@ static void enqueue(queue_t* queue_ptr, task_descriptor_t* task_to_add)
 	
 	if(task_to_add->level == PERIODIC) 
 	{
-		task_descriptor_t* head_ptr = queue_ptr->head;
 		uint16_t now = Now();
-		//if ((task_to_add->offset - (now - task_to_add->last)) < (head_ptr->offset - (now - head_ptr->last)))
-		if ((task_to_add->period - ((now + task_to_add->offset) - task_to_add->last)) < (head_ptr->period - ((now + head_ptr->offset) - head_ptr->last)))
+		task_descriptor_t* head_ptr = queue_ptr->head;
+		while(head_ptr != NULL)
 		{
-			task_to_add->next = queue_ptr->head;
-			queue_ptr->head = task_to_add;
-			return;
-		} 
-		else
-		{
-			while(head_ptr->next != NULL)
+			if (((task_to_add->offset + task_to_add->period) - (now - task_to_add->last)) < ((head_ptr->offset + head_ptr->period) - (now - head_ptr->last)))
 			{
-				if ((task_to_add->period - ((now + task_to_add->offset) - task_to_add->last)) < (head_ptr->period - ((now + head_ptr->offset) - head_ptr->last)))
-				{
-					task_to_add->next = head_ptr->next;
-					head_ptr->next = task_to_add;
-					return;
-				}
-				
-				head_ptr = head_ptr->next;
+				task_to_add->next = head_ptr->next;
+				head_ptr->next = task_to_add;
+				return;
 			}
+			
+			head_ptr = head_ptr->next;
 		}
 	}
 
@@ -779,8 +775,7 @@ static void kernel_update_ticker(void)
 	/* If Periodic task still running then error more than wcet */
 	if(cur_task != NULL && cur_task->level == PERIODIC && cur_task->state == RUNNING)
 	{
-		//if((cur_task->offset + cur_task->wcet) < (Now() - cur_task->last))
-		if (((Now() + cur_task->offset) - cur_task->last) > (cur_task->period + cur_task->wcet))
+		if ((Now() - cur_task->last) > (cur_task->offset + cur_task->period + cur_task->wcet))
 		{
 			/* error handling */
 			error_msg = ERR_RUN_3_PERIODIC_TOOK_TOO_LONG;

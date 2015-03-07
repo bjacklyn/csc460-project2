@@ -2,7 +2,7 @@
 
 /*
     Desired Trace
-    T007;1;1;1;1;2;
+    T007;1;2;3;4;5;6;7;8;9;10;
 */
 
 #include <avr/io.h>
@@ -18,6 +18,7 @@ void periodic1() {
 		if ((count % 10) == 0)
 		{
 			print_trace();
+			break;
 		}
 		
 		Task_Next();
@@ -26,17 +27,11 @@ void periodic1() {
 	}
 }
 
-// void periodic2() {
-// 	//add_to_trace(2);
-// 	//print_trace();
-// }
-
 int r_main() {
     uart_init();
     set_trace_test(7);
 	
     Task_Create_Periodic(periodic1, 0, 20, 100, 10); // run on 10th tick
-    //Task_Create_Periodic(periodic2, 0, 50, 100, 70); // run on 70th tick
 
 	return 0;
 }

@@ -29,7 +29,9 @@ main.d main.o: .././main.cpp .././main.h .././os.h \
  .././tests/test004_roundrobin_queue2.cpp \
  .././tests/test005_periodic_queue1.cpp \
  .././tests/test006_periodic_queue2.cpp \
- .././tests/test007_periodic_queue3.cpp
+ .././tests/test007_periodic_queue3.cpp \
+ .././tests/test008_periodic_queue4.cpp \
+ .././tests/test009_periodic_rr_queue1.cpp
 
 .././main.h:
 
@@ -100,3 +102,7 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 .././tests/test006_periodic_queue2.cpp:
 
 .././tests/test007_periodic_queue3.cpp:
+
+.././tests/test008_periodic_queue4.cpp:
+
+.././tests/test009_periodic_rr_queue1.cpp:

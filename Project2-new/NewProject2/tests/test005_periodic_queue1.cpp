@@ -2,7 +2,7 @@
 
 /*
     Desired Trace
-    T005;1;
+    T005;1;50;
 */
 
 #include <avr/io.h>
@@ -19,7 +19,7 @@ int r_main() {
     uart_init();
     set_trace_test(5);
 	
-    Task_Create_Periodic(periodic1, 0, 50, 100, 50); // run on 5th tick
+    Task_Create_Periodic(periodic1, 0, 20, 100, 50); // run on 50th tick
 
 	return 0;
 }

@@ -42,6 +42,8 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../main.cpp \
 ../os.cpp \
+../tests/test009_periodic_rr_queue1.cpp \
+../tests/test008_periodic_queue4.cpp \
 ../tests/test007_periodic_queue3.cpp \
 ../tests/test006_periodic_queue2.cpp \
 ../tests/test005_periodic_queue1.cpp \
@@ -63,6 +65,8 @@ ASM_SRCS +=
 OBJS +=  \
 main.o \
 os.o \
+tests/test009_periodic_rr_queue1.o \
+tests/test008_periodic_queue4.o \
 tests/test007_periodic_queue3.o \
 tests/test006_periodic_queue2.o \
 tests/test005_periodic_queue1.o \
@@ -77,6 +81,8 @@ uart/uart.o
 OBJS_AS_ARGS +=  \
 main.o \
 os.o \
+tests/test009_periodic_rr_queue1.o \
+tests/test008_periodic_queue4.o \
 tests/test007_periodic_queue3.o \
 tests/test006_periodic_queue2.o \
 tests/test005_periodic_queue1.o \
@@ -91,6 +97,8 @@ uart/uart.o
 C_DEPS +=  \
 main.d \
 os.d \
+tests/test009_periodic_rr_queue1.d \
+tests/test008_periodic_queue4.d \
 tests/test007_periodic_queue3.d \
 tests/test006_periodic_queue2.d \
 tests/test005_periodic_queue1.d \
@@ -105,6 +113,8 @@ uart/uart.d
 C_DEPS_AS_ARGS +=  \
 main.d \
 os.d \
+tests/test009_periodic_rr_queue1.d \
+tests/test008_periodic_queue4.d \
 tests/test007_periodic_queue3.d \
 tests/test006_periodic_queue2.d \
 tests/test005_periodic_queue1.d \
@@ -130,6 +140,10 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 

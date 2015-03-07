@@ -5,7 +5,7 @@
 #include "trace/trace.h"
 #include "profile.h"
 
-#define USE_TEST_007
+#define USE_TEST_008
 
 #include "tests/test000_now.cpp"
 #include "tests/test001_now_roll_over.cpp"
@@ -15,6 +15,9 @@
 #include "tests/test005_periodic_queue1.cpp"
 #include "tests/test006_periodic_queue2.cpp"
 #include "tests/test007_periodic_queue3.cpp"
+#include "tests/test008_periodic_queue4.cpp"
+#include "tests/test009_periodic_rr_queue1.cpp"
+#include "tests/test010_periodic_system_queue1.cpp"
 
 #ifdef _USE_MAIN_
 void round_robin(void) { }

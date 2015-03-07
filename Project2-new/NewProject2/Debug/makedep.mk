@@ -6,6 +6,10 @@ main.cpp
 
 os.cpp
 
+tests\test009_periodic_rr_queue1.cpp
+
+tests\test008_periodic_queue4.cpp
+
 tests\test007_periodic_queue3.cpp
 
 tests\test006_periodic_queue2.cpp

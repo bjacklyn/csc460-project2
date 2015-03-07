@@ -115,7 +115,10 @@ struct td_struct
 	uint16_t						offset;
 	/** The last time this task ran. */	
 	uint16_t						last;
-	
+	/** The last time this task ran. */
+	bool							ran_once;
+	/** The remaining number of ticks. */
+	uint16_t						ticks_remaining;
 	
     /** A link to the next task descriptor in the queue holding this task. */
     task_descriptor_t*              next;
