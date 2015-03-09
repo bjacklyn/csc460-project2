@@ -183,6 +183,9 @@ extern "C" {
 /** max. number of processes supported */  
 #define MAXPROCESS		8   
 
+/** max. number of services supported */
+#define MAXSERVICE      MAXPROCESS
+
 /** time resolution */
 #define TICK			    5     // resolution of system clock in milliseconds
 #define QUANTUM       5     // a quantum for RR tasks
@@ -354,6 +357,8 @@ void Service_Publish( SERVICE *s, int16_t v );
   * purposes, it should be used for durations less than 65 seconds.
   */
 uint16_t Now();  // number of milliseconds since the RTOS boots.
+
+void Set_Tasks_Preemptable(bool preemptable);
 
 #ifdef __cplusplus
 }

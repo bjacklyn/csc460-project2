@@ -4,10 +4,12 @@ c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-t
                               uart/uart.o (__divmodhi4)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
                               c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o (exit)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+                              os.o (__tablejump2__)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_copy_data.o)
-                              os.o (__do_copy_data)
+                              main.o (__do_copy_data)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_clear_bss.o)
-                              os.o (__do_clear_bss)
+                              main.o (__do_clear_bss)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_umulhisi3.o)
                               os.o (__umulhisi3)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_udivmodhi4.o)
@@ -35,16 +37,140 @@ Discarded input sections
  .text          0x00000000        0x0 os.o
  .data          0x00000000        0x0 os.o
  .bss           0x00000000        0x0 os.o
- .text.Task_Create_System
-                0x00000000       0x34 os.o
- .text.Task_Create_RR
-                0x00000000       0x34 os.o
  .text.Task_Create_Periodic
                 0x00000000       0x52 os.o
  .text.Task_Next
                 0x00000000       0x26 os.o
  .text.Task_GetArg
                 0x00000000       0x18 os.o
+ .text.Set_Tasks_Preemptable
+                0x00000000        0x6 os.o
+ .text          0x00000000        0x0 tests/test022_service_publish_from_interrupt.o
+ .data          0x00000000        0x0 tests/test022_service_publish_from_interrupt.o
+ .bss           0x00000000        0x0 tests/test022_service_publish_from_interrupt.o
+ .debug_line    0x00000000        0x0 tests/test022_service_publish_from_interrupt.o
+ .debug_str     0x00000000        0x0 tests/test022_service_publish_from_interrupt.o
+ .comment       0x00000000       0x31 tests/test022_service_publish_from_interrupt.o
+ .text          0x00000000        0x0 tests/test021_service_multiple_subscribe_and_publish.o
+ .data          0x00000000        0x0 tests/test021_service_multiple_subscribe_and_publish.o
+ .bss           0x00000000        0x0 tests/test021_service_multiple_subscribe_and_publish.o
+ .debug_line    0x00000000        0x0 tests/test021_service_multiple_subscribe_and_publish.o
+ .debug_str     0x00000000        0x0 tests/test021_service_multiple_subscribe_and_publish.o
+ .comment       0x00000000       0x31 tests/test021_service_multiple_subscribe_and_publish.o
+ .text          0x00000000        0x0 tests/test020_service_publish_all_task_levels.o
+ .data          0x00000000        0x0 tests/test020_service_publish_all_task_levels.o
+ .bss           0x00000000        0x0 tests/test020_service_publish_all_task_levels.o
+ .debug_line    0x00000000        0x0 tests/test020_service_publish_all_task_levels.o
+ .debug_str     0x00000000        0x0 tests/test020_service_publish_all_task_levels.o
+ .comment       0x00000000       0x31 tests/test020_service_publish_all_task_levels.o
+ .text          0x00000000        0x0 tests/test019_service_subscribe_non_existing_service.o
+ .data          0x00000000        0x0 tests/test019_service_subscribe_non_existing_service.o
+ .bss           0x00000000        0x0 tests/test019_service_subscribe_non_existing_service.o
+ .debug_line    0x00000000        0x0 tests/test019_service_subscribe_non_existing_service.o
+ .debug_str     0x00000000        0x0 tests/test019_service_subscribe_non_existing_service.o
+ .comment       0x00000000       0x31 tests/test019_service_subscribe_non_existing_service.o
+ .text          0x00000000        0x0 tests/test018_service_invalid_periodic_subscribe.o
+ .data          0x00000000        0x0 tests/test018_service_invalid_periodic_subscribe.o
+ .bss           0x00000000        0x0 tests/test018_service_invalid_periodic_subscribe.o
+ .debug_line    0x00000000        0x0 tests/test018_service_invalid_periodic_subscribe.o
+ .debug_str     0x00000000        0x0 tests/test018_service_invalid_periodic_subscribe.o
+ .comment       0x00000000       0x31 tests/test018_service_invalid_periodic_subscribe.o
+ .text          0x00000000        0x0 tests/test017_service_subscribe_all_task_levels.o
+ .data          0x00000000        0x0 tests/test017_service_subscribe_all_task_levels.o
+ .bss           0x00000000        0x0 tests/test017_service_subscribe_all_task_levels.o
+ .debug_line    0x00000000        0x0 tests/test017_service_subscribe_all_task_levels.o
+ .debug_str     0x00000000        0x0 tests/test017_service_subscribe_all_task_levels.o
+ .comment       0x00000000       0x31 tests/test017_service_subscribe_all_task_levels.o
+ .text          0x00000000        0x0 tests/test016_service_init_too_many_services.o
+ .data          0x00000000        0x0 tests/test016_service_init_too_many_services.o
+ .bss           0x00000000        0x0 tests/test016_service_init_too_many_services.o
+ .debug_line    0x00000000        0x0 tests/test016_service_init_too_many_services.o
+ .debug_str     0x00000000        0x0 tests/test016_service_init_too_many_services.o
+ .comment       0x00000000       0x31 tests/test016_service_init_too_many_services.o
+ .text          0x00000000        0x0 tests/test015_service_init.o
+ .data          0x00000000        0x0 tests/test015_service_init.o
+ .bss           0x00000000        0x0 tests/test015_service_init.o
+ .debug_line    0x00000000        0x0 tests/test015_service_init.o
+ .debug_str     0x00000000        0x0 tests/test015_service_init.o
+ .comment       0x00000000       0x31 tests/test015_service_init.o
+ .text          0x00000000        0x0 tests/test014_all_tasks.o
+ .data          0x00000000        0x0 tests/test014_all_tasks.o
+ .bss           0x00000000        0x0 tests/test014_all_tasks.o
+ .debug_line    0x00000000        0x0 tests/test014_all_tasks.o
+ .debug_str     0x00000000        0x0 tests/test014_all_tasks.o
+ .comment       0x00000000       0x31 tests/test014_all_tasks.o
+ .text          0x00000000        0x0 tests/test013_periodic_invalid_tasks_scheduling.o
+ .data          0x00000000        0x0 tests/test013_periodic_invalid_tasks_scheduling.o
+ .bss           0x00000000        0x0 tests/test013_periodic_invalid_tasks_scheduling.o
+ .debug_line    0x00000000        0x0 tests/test013_periodic_invalid_tasks_scheduling.o
+ .debug_str     0x00000000        0x0 tests/test013_periodic_invalid_tasks_scheduling.o
+ .comment       0x00000000       0x31 tests/test013_periodic_invalid_tasks_scheduling.o
+ .text          0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .data          0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .bss           0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .debug_line    0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .debug_str     0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .comment       0x00000000       0x31 tests/test012_periodic_invalid_wcet.o
+ .text          0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .data          0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .bss           0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .debug_line    0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .debug_str     0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .comment       0x00000000       0x31 tests/test011_periodic_system_queue2.o
+ .text          0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .data          0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .bss           0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .debug_line    0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .debug_str     0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .comment       0x00000000       0x31 tests/test010_periodic_system_queue1.o
+ .text          0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .data          0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .bss           0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .debug_line    0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .debug_str     0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .comment       0x00000000       0x31 tests/test009_periodic_rr_queue1.o
+ .text          0x00000000        0x0 tests/test008_periodic_valid_tasks_scheduling.o
+ .data          0x00000000        0x0 tests/test008_periodic_valid_tasks_scheduling.o
+ .bss           0x00000000        0x0 tests/test008_periodic_valid_tasks_scheduling.o
+ .debug_line    0x00000000        0x0 tests/test008_periodic_valid_tasks_scheduling.o
+ .debug_str     0x00000000        0x0 tests/test008_periodic_valid_tasks_scheduling.o
+ .comment       0x00000000       0x31 tests/test008_periodic_valid_tasks_scheduling.o
+ .text          0x00000000        0x0 tests/test007_periodic_queue3.o
+ .data          0x00000000        0x0 tests/test007_periodic_queue3.o
+ .bss           0x00000000        0x0 tests/test007_periodic_queue3.o
+ .debug_line    0x00000000        0x0 tests/test007_periodic_queue3.o
+ .debug_str     0x00000000        0x0 tests/test007_periodic_queue3.o
+ .comment       0x00000000       0x31 tests/test007_periodic_queue3.o
+ .text          0x00000000        0x0 tests/test006_periodic_queue2.o
+ .data          0x00000000        0x0 tests/test006_periodic_queue2.o
+ .bss           0x00000000        0x0 tests/test006_periodic_queue2.o
+ .debug_line    0x00000000        0x0 tests/test006_periodic_queue2.o
+ .debug_str     0x00000000        0x0 tests/test006_periodic_queue2.o
+ .comment       0x00000000       0x31 tests/test006_periodic_queue2.o
+ .text          0x00000000        0x0 tests/test005_periodic_queue1.o
+ .data          0x00000000        0x0 tests/test005_periodic_queue1.o
+ .bss           0x00000000        0x0 tests/test005_periodic_queue1.o
+ .debug_line    0x00000000        0x0 tests/test005_periodic_queue1.o
+ .debug_str     0x00000000        0x0 tests/test005_periodic_queue1.o
+ .comment       0x00000000       0x31 tests/test005_periodic_queue1.o
+ .text          0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .data          0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .bss           0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .debug_line    0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .debug_str     0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .comment       0x00000000       0x31 tests/test004_roundrobin_queue2.o
+ .text          0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .data          0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .bss           0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .debug_line    0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .debug_str     0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .comment       0x00000000       0x31 tests/test003_roundrobin_queue1.o
+ .text          0x00000000        0x0 tests/test002_system_queue.o
+ .data          0x00000000        0x0 tests/test002_system_queue.o
+ .bss           0x00000000        0x0 tests/test002_system_queue.o
+ .debug_line    0x00000000        0x0 tests/test002_system_queue.o
+ .debug_str     0x00000000        0x0 tests/test002_system_queue.o
+ .comment       0x00000000       0x31 tests/test002_system_queue.o
  .text          0x00000000        0x0 tests/test001_now_roll_over.o
  .data          0x00000000        0x0 tests/test001_now_roll_over.o
  .bss           0x00000000        0x0 tests/test001_now_roll_over.o
@@ -103,6 +229,21 @@ Discarded input sections
                 0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_copy_data.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_copy_data.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_copy_data.o)
@@ -200,6 +341,27 @@ Address of section .data set to 0x800200
 LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
 LOAD main.o
 LOAD os.o
+LOAD tests/test022_service_publish_from_interrupt.o
+LOAD tests/test021_service_multiple_subscribe_and_publish.o
+LOAD tests/test020_service_publish_all_task_levels.o
+LOAD tests/test019_service_subscribe_non_existing_service.o
+LOAD tests/test018_service_invalid_periodic_subscribe.o
+LOAD tests/test017_service_subscribe_all_task_levels.o
+LOAD tests/test016_service_init_too_many_services.o
+LOAD tests/test015_service_init.o
+LOAD tests/test014_all_tasks.o
+LOAD tests/test013_periodic_invalid_tasks_scheduling.o
+LOAD tests/test012_periodic_invalid_wcet.o
+LOAD tests/test011_periodic_system_queue2.o
+LOAD tests/test010_periodic_system_queue1.o
+LOAD tests/test009_periodic_rr_queue1.o
+LOAD tests/test008_periodic_valid_tasks_scheduling.o
+LOAD tests/test007_periodic_queue3.o
+LOAD tests/test006_periodic_queue2.o
+LOAD tests/test005_periodic_queue1.o
+LOAD tests/test004_roundrobin_queue2.o
+LOAD tests/test003_roundrobin_queue1.o
+LOAD tests/test002_system_queue.o
 LOAD tests/test001_now_roll_over.o
 LOAD tests/test000_now.o
 LOAD trace/trace.o
@@ -305,49 +467,51 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x11e4
+.text           0x00000000     0x1626
  *(.vectors)
  .vectors       0x00000000       0xe4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
                 0x00000000                __vector_default
                 0x00000000                __vectors
  *(.vectors)
  *(.progmem.gcc*)
-                0x000000e4                . = ALIGN (0x2)
-                0x000000e4                __trampolines_start = .
+ .progmem.gcc_sw_table._Z7OS_Initv
+                0x000000e4       0x12 os.o
+                0x000000f6                . = ALIGN (0x2)
+                0x000000f6                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x000000e4        0x0 linker stubs
+ .trampolines   0x000000f6        0x0 linker stubs
  *(.trampolines*)
-                0x000000e4                __trampolines_end = .
+                0x000000f6                __trampolines_end = .
  *(.progmem*)
-                0x000000e4                . = ALIGN (0x2)
+                0x000000f6                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000000e4                __ctors_start = .
+                0x000000f6                __ctors_start = .
  *(.ctors)
-                0x000000e4                __ctors_end = .
-                0x000000e4                __dtors_start = .
+                0x000000f6                __ctors_end = .
+                0x000000f6                __dtors_start = .
  *(.dtors)
-                0x000000e4                __dtors_end = .
+                0x000000f6                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000000e4        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
-                0x000000e4                __init
+ .init0         0x000000f6        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
+                0x000000f6                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000000e4       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
+ .init2         0x000000f6       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000f4       0x1a c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_copy_data.o)
-                0x000000f4                __do_copy_data
- .init4         0x0000010e       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_clear_bss.o)
-                0x0000010e                __do_clear_bss
+ .init4         0x00000106       0x1a c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_copy_data.o)
+                0x00000106                __do_copy_data
+ .init4         0x00000120       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_clear_bss.o)
+                0x00000120                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -358,155 +522,187 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000011e        0x6 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
+ .init9         0x00000130        0x6 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
  *(.init9)
  *(.text)
- .text          0x00000124        0x2 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
-                0x00000124                __vector_38
-                0x00000124                __vector_22
-                0x00000124                __vector_28
-                0x00000124                __vector_1
-                0x00000124                __vector_32
-                0x00000124                __vector_34
-                0x00000124                __vector_24
-                0x00000124                __vector_12
-                0x00000124                __vector_55
-                0x00000124                __vector_46
-                0x00000124                __bad_interrupt
-                0x00000124                __vector_6
-                0x00000124                __vector_31
-                0x00000124                __vector_35
-                0x00000124                __vector_39
-                0x00000124                __vector_3
-                0x00000124                __vector_23
-                0x00000124                __vector_30
-                0x00000124                __vector_45
-                0x00000124                __vector_11
-                0x00000124                __vector_54
-                0x00000124                __vector_13
-                0x00000124                __vector_19
-                0x00000124                __vector_56
-                0x00000124                __vector_7
-                0x00000124                __vector_49
-                0x00000124                __vector_41
-                0x00000124                __vector_43
-                0x00000124                __vector_27
-                0x00000124                __vector_5
-                0x00000124                __vector_33
-                0x00000124                __vector_47
-                0x00000124                __vector_52
-                0x00000124                __vector_37
-                0x00000124                __vector_4
-                0x00000124                __vector_44
-                0x00000124                __vector_51
-                0x00000124                __vector_9
-                0x00000124                __vector_2
-                0x00000124                __vector_21
-                0x00000124                __vector_15
-                0x00000124                __vector_36
-                0x00000124                __vector_29
-                0x00000124                __vector_40
-                0x00000124                __vector_8
-                0x00000124                __vector_26
-                0x00000124                __vector_48
-                0x00000124                __vector_14
-                0x00000124                __vector_53
-                0x00000124                __vector_10
-                0x00000124                __vector_50
-                0x00000124                __vector_16
-                0x00000124                __vector_18
-                0x00000124                __vector_20
-                0x00000124                __vector_42
-                0x00000126                . = ALIGN (0x2)
+ .text          0x00000136        0x2 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
+                0x00000136                __vector_38
+                0x00000136                __vector_22
+                0x00000136                __vector_28
+                0x00000136                __vector_1
+                0x00000136                __vector_32
+                0x00000136                __vector_34
+                0x00000136                __vector_24
+                0x00000136                __vector_12
+                0x00000136                __vector_55
+                0x00000136                __vector_46
+                0x00000136                __bad_interrupt
+                0x00000136                __vector_6
+                0x00000136                __vector_31
+                0x00000136                __vector_35
+                0x00000136                __vector_39
+                0x00000136                __vector_3
+                0x00000136                __vector_23
+                0x00000136                __vector_30
+                0x00000136                __vector_45
+                0x00000136                __vector_11
+                0x00000136                __vector_54
+                0x00000136                __vector_13
+                0x00000136                __vector_19
+                0x00000136                __vector_56
+                0x00000136                __vector_7
+                0x00000136                __vector_49
+                0x00000136                __vector_41
+                0x00000136                __vector_43
+                0x00000136                __vector_27
+                0x00000136                __vector_5
+                0x00000136                __vector_33
+                0x00000136                __vector_47
+                0x00000136                __vector_52
+                0x00000136                __vector_37
+                0x00000136                __vector_4
+                0x00000136                __vector_44
+                0x00000136                __vector_51
+                0x00000136                __vector_9
+                0x00000136                __vector_2
+                0x00000136                __vector_21
+                0x00000136                __vector_15
+                0x00000136                __vector_36
+                0x00000136                __vector_29
+                0x00000136                __vector_40
+                0x00000136                __vector_8
+                0x00000136                __vector_26
+                0x00000136                __vector_48
+                0x00000136                __vector_14
+                0x00000136                __vector_53
+                0x00000136                __vector_10
+                0x00000136                __vector_50
+                0x00000136                __vector_16
+                0x00000136                __vector_18
+                0x00000136                __vector_20
+                0x00000136                __vector_42
+                0x00000138                . = ALIGN (0x2)
  *(.text.*)
+ .text._Z6systemv
+                0x00000138       0x22 main.o
+                0x00000138                _Z6systemv
+ .text._Z11roundrobin1v
+                0x0000015a       0x20 main.o
+                0x0000015a                _Z11roundrobin1v
+ .text._Z11roundrobin2v
+                0x0000017a       0x22 main.o
+                0x0000017a                _Z11roundrobin2v
+ .text._Z8periodicv
+                0x0000019c       0x1e main.o
+                0x0000019c                _Z8periodicv
  .text._Z6r_mainv
-                0x00000126       0x36 main.o
-                0x00000126                _Z6r_mainv
+                0x000001ba       0x42 main.o
+                0x000001ba                _Z6r_mainv
  .text._ZL4idlev
-                0x0000015c        0x2 os.o
+                0x000001fc        0x2 os.o
  .text._ZL11exit_kernelv
-                0x0000015e       0xb2 os.o
+                0x000001fe       0xb2 os.o
  .text._ZL12enter_kernelv
-                0x00000210       0xb2 os.o
- .text._ZL7dequeueP7queue_t
-                0x000002c2       0x20 os.o
- .text.Task_Terminate
-                0x000002e2       0x14 os.o
-                0x000002e2                Task_Terminate
- .text.__vector_17
-                0x000002f6       0xe8 os.o
-                0x000002f6                __vector_17
- .text.OS_Abort
-                0x000003de       0xba os.o
-                0x000003de                OS_Abort
- .text.Now      0x00000498       0x44 os.o
-                0x00000498                Now
+                0x000002b0       0xb2 os.o
  .text._ZL7enqueueP7queue_tP9td_struct
-                0x000004dc      0x10c os.o
+                0x00000362       0x30 os.o
+ .text._ZL7dequeueP7queue_t
+                0x00000392       0x20 os.o
+ .text.Task_Terminate
+                0x000003b2       0x14 os.o
+                0x000003b2                Task_Terminate
+ .text.__vector_17
+                0x000003c6       0xe8 os.o
+                0x000003c6                __vector_17
+ .text.OS_Abort
+                0x000004ae       0xac os.o
+                0x000004ae                OS_Abort
+ .text.Task_Create_System
+                0x0000055a       0x32 os.o
+                0x0000055a                Task_Create_System
+ .text.Task_Create_RR
+                0x0000058c       0x32 os.o
+                0x0000058c                Task_Create_RR
+ .text.Service_Init
+                0x000005be       0x1c os.o
+                0x000005be                Service_Init
+ .text.Service_Subscribe
+                0x000005da       0x2c os.o
+                0x000005da                Service_Subscribe
+ .text.Service_Publish
+                0x00000606       0x24 os.o
+                0x00000606                Service_Publish
+ .text.Now      0x0000062a       0x44 os.o
+                0x0000062a                Now
+ .text._ZL16enqueue_periodicP9td_struct
+                0x0000066e      0x10a os.o
  .text._ZL18kernel_create_taskv
-                0x000005e8      0x106 os.o
+                0x00000778      0x14a os.o
  .text._Z7OS_Initv
-                0x000006ee      0x326 os.o
-                0x000006ee                _Z7OS_Initv
- .text.main     0x00000a14        0x2 os.o
-                0x00000a14                main
+                0x000008c2      0x590 os.o
+                0x000008c2                _Z7OS_Initv
+ .text.main     0x00000e52        0x2 os.o
+                0x00000e52                main
  .text._Z11print_tracev
-                0x00000a16       0xc6 trace/trace.o
-                0x00000a16                _Z11print_tracev
+                0x00000e54       0xbe trace/trace.o
+                0x00000e54                _Z11print_tracev
  .text._Z12add_to_tracej
-                0x00000adc       0x38 trace/trace.o
-                0x00000adc                _Z12add_to_tracej
+                0x00000f12       0x38 trace/trace.o
+                0x00000f12                _Z12add_to_tracej
  .text._Z14set_trace_testh
-                0x00000b14        0x6 trace/trace.o
-                0x00000b14                _Z14set_trace_testh
+                0x00000f4a        0x6 trace/trace.o
+                0x00000f4a                _Z14set_trace_testh
  .text._Z12uart_putcharc
-                0x00000b1a       0x14 uart/uart.o
-                0x00000b1a                _Z12uart_putcharc
+                0x00000f50       0x14 uart/uart.o
+                0x00000f50                _Z12uart_putcharc
  .text._Z11uart_putstrPc
-                0x00000b2e       0x1c uart/uart.o
-                0x00000b2e                _Z11uart_putstrPc
+                0x00000f64       0x1c uart/uart.o
+                0x00000f64                _Z11uart_putstrPc
  .text._Z10uart_writePhi
-                0x00000b4a        0x8 uart/uart.o
-                0x00000b4a                _Z10uart_writePhi
+                0x00000f80        0x8 uart/uart.o
+                0x00000f80                _Z10uart_writePhi
  .text._Z9uart_initv
-                0x00000b52       0x24 uart/uart.o
-                0x00000b52                _Z9uart_initv
+                0x00000f88       0x24 uart/uart.o
+                0x00000f88                _Z9uart_initv
  .text.__vector_25
-                0x00000b76       0x7a uart/uart.o
-                0x00000b76                __vector_25
+                0x00000fac       0x7a uart/uart.o
+                0x00000fac                __vector_25
  .text.libgcc.div
-                0x00000bf0       0x26 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_divmodhi4.o)
-                0x00000bf0                _div
-                0x00000bf0                __divmodhi4
+                0x00001026       0x26 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_divmodhi4.o)
+                0x00001026                _div
+                0x00001026                __divmodhi4
+ .text.libgcc   0x0000104c        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_tablejump.o)
+                0x0000104c                __tablejump2__
+                0x00001050                __tablejump__
  .text.libgcc.mul
-                0x00000c16       0x1e c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_umulhisi3.o)
-                0x00000c16                __umulhisi3
+                0x00001058       0x1e c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_umulhisi3.o)
+                0x00001058                __umulhisi3
  .text.libgcc.div
-                0x00000c34       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_udivmodhi4.o)
-                0x00000c34                __udivmodhi4
+                0x00001076       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_udivmodhi4.o)
+                0x00001076                __udivmodhi4
  .text.avr-libc
-                0x00000c5c       0x5c c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(sprintf.o)
-                0x00000c5c                sprintf
+                0x0000109e       0x5c c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(sprintf.o)
+                0x0000109e                sprintf
  .text.avr-libc
-                0x00000cb8      0x3dc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(vfprintf_std.o)
-                0x00000cb8                vfprintf
+                0x000010fa      0x3dc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(vfprintf_std.o)
+                0x000010fa                vfprintf
  .text.avr-libc
-                0x00001094       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(strnlen_P.o)
-                0x00001094                strnlen_P
+                0x000014d6       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(strnlen_P.o)
+                0x000014d6                strnlen_P
  .text.avr-libc
-                0x000010aa       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(strnlen.o)
-                0x000010aa                strnlen
+                0x000014ec       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(strnlen.o)
+                0x000014ec                strnlen
  .text.avr-libc
-                0x000010c0       0x64 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(fputc.o)
-                0x000010c0                fputc
+                0x00001502       0x64 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(fputc.o)
+                0x00001502                fputc
  .text.avr-libc
-                0x00001124       0xbc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(ultoa_invert.o)
-                0x00001124                __ultoa_invert
-                0x000011e0                . = ALIGN (0x2)
+                0x00001566       0xbc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(ultoa_invert.o)
+                0x00001566                __ultoa_invert
+                0x00001622                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000011e0        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
-                0x000011e0                _exit
-                0x000011e0                exit
+ .fini9         0x00001622        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
+                0x00001622                _exit
+                0x00001622                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -525,81 +721,105 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000011e0        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
+ .fini0         0x00001622        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x000011e4                _etext = .
+                0x00001626                _etext = .
 
-.data           0x00800200        0xc load address 0x000011e4
+.data           0x00800200       0x18 load address 0x00001626
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data._ZL9error_msg
-                0x00800200        0x1 os.o
+ .data.data3    0x00800200        0x2 main.o
+                0x00800200                data3
+ .data.data2    0x00800202        0x2 main.o
+                0x00800202                data2
+ .data.data1    0x00800204        0x2 main.o
+                0x00800204                data1
+ .data.three    0x00800206        0x2 main.o
+                0x00800206                three
+ .data.two      0x00800208        0x2 main.o
+                0x00800208                two
+ .data.one      0x0080020a        0x2 main.o
+                0x0080020a                one
+ .data._ZL17tasks_preemptable
+                0x0080020c        0x1 os.o
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800201        0xb trace/trace.o
+                0x0080020d        0xb trace/trace.o
  *(.gnu.linkonce.d*)
-                0x0080020c                . = ALIGN (0x2)
-                0x0080020c                _edata = .
-                0x0080020c                PROVIDE (__data_end, .)
+                0x00800218                . = ALIGN (0x2)
+                0x00800218                _edata = .
+                0x00800218                PROVIDE (__data_end, .)
 
-.bss            0x0080020c      0xc48
-                0x0080020c                PROVIDE (__bss_start, .)
+.bss            0x00800218      0xca6
+                0x00800218                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.service   0x00800218        0x2 main.o
+                0x00800218                service
+ .bss._ZL9error_msg
+                0x0080021a        0x1 os.o
  .bss._ZL14periodic_queue
-                0x0080020c        0x4 os.o
+                0x0080021b        0x4 os.o
  .bss._ZL12system_queue
-                0x00800210        0x4 os.o
+                0x0080021f        0x4 os.o
  .bss._ZL8rr_queue
-                0x00800214        0x4 os.o
+                0x00800223        0x4 os.o
  .bss._ZL15dead_pool_queue
-                0x00800218        0x4 os.o
+                0x00800227        0x4 os.o
+ .bss._ZL13service_queue
+                0x0080022b       0x20 os.o
+ .bss._ZL20num_services_created
+                0x0080024b        0x1 os.o
+ .bss._ZL27kernel_request_service_data
+                0x0080024c        0x2 os.o
+ .bss._ZL26kernel_request_service_ptr
+                0x0080024e        0x2 os.o
  .bss._ZL21kernel_request_retval
-                0x0080021c        0x2 os.o
+                0x00800250        0x2 os.o
  .bss._ZL26kernel_request_create_args
-                0x0080021e        0xb os.o
+                0x00800252        0xb os.o
  .bss._ZL14kernel_request
-                0x00800229        0x1 os.o
+                0x0080025d        0x1 os.o
  .bss._ZL9task_desc
-                0x0080022a      0x999 os.o
+                0x0080025e      0x9cf os.o
  .bss._ZL9kernel_sp
-                0x00800bc3        0x2 os.o
+                0x00800c2d        0x2 os.o
  .bss._ZL8cur_task
-                0x00800bc5        0x2 os.o
+                0x00800c2f        0x2 os.o
  .bss._ZL10ms_counter
-                0x00800bc7        0x2 os.o
+                0x00800c31        0x2 os.o
  .bss.trace_buffer
-                0x00800bc9       0x20 trace/trace.o
-                0x00800bc9                trace_buffer
+                0x00800c33       0x20 trace/trace.o
+                0x00800c33                trace_buffer
  .bss.trace_counter
-                0x00800be9        0x2 trace/trace.o
-                0x00800be9                trace_counter
+                0x00800c53        0x2 trace/trace.o
+                0x00800c53                trace_counter
  .bss.trace_array
-                0x00800beb      0x200 trace/trace.o
-                0x00800beb                trace_array
+                0x00800c55      0x200 trace/trace.o
+                0x00800c55                trace_array
  .bss.trace_printed
-                0x00800deb        0x1 trace/trace.o
-                0x00800deb                trace_printed
+                0x00800e55        0x1 trace/trace.o
+                0x00800e55                trace_printed
  .bss.trace_number
-                0x00800dec        0x1 trace/trace.o
-                0x00800dec                trace_number
+                0x00800e56        0x1 trace/trace.o
+                0x00800e56                trace_number
  .bss._ZL7uart_rx
-                0x00800ded        0x1 uart/uart.o
- .bss._ZL2rx    0x00800dee       0x64 uart/uart.o
- .bss._ZL3rxn   0x00800e52        0x2 uart/uart.o
+                0x00800e57        0x1 uart/uart.o
+ .bss._ZL2rx    0x00800e58       0x64 uart/uart.o
+ .bss._ZL3rxn   0x00800ebc        0x2 uart/uart.o
  *(COMMON)
-                0x00800e54                PROVIDE (__bss_end, .)
-                0x000011e4                __data_load_start = LOADADDR (.data)
-                0x000011f0                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800ebe                PROVIDE (__bss_end, .)
+                0x00001626                __data_load_start = LOADADDR (.data)
+                0x0000163e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800e54        0x0
-                0x00800e54                PROVIDE (__noinit_start, .)
+.noinit         0x00800ebe        0x0
+                0x00800ebe                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800e54                PROVIDE (__noinit_end, .)
-                0x00800e54                _end = .
-                0x00800e54                PROVIDE (__heap_start, .)
+                0x00800ebe                PROVIDE (__noinit_end, .)
+                0x00800ebe                _end = .
+                0x00800ebe                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -665,65 +885,64 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x158
+.debug_aranges  0x00000000      0x1a0
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x20 main.o
+                0x00000000       0x40 main.o
  .debug_aranges
-                0x00000020       0xa0 os.o
+                0x00000040       0xc8 os.o
  .debug_aranges
-                0x000000c0       0x40 trace/trace.o
+                0x00000108       0x40 trace/trace.o
  .debug_aranges
-                0x00000100       0x58 uart/uart.o
+                0x00000148       0x58 uart/uart.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1399
+.debug_info     0x00000000     0x1a31
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x1ee main.o
- .debug_info    0x000001ee      0xcf1 os.o
- .debug_info    0x00000edf      0x26f trace/trace.o
- .debug_info    0x0000114e      0x24b uart/uart.o
+ .debug_info    0x00000000      0x447 main.o
+ .debug_info    0x00000447     0x1130 os.o
+ .debug_info    0x00001577      0x26f trace/trace.o
+ .debug_info    0x000017e6      0x24b uart/uart.o
 
-.debug_abbrev   0x00000000      0x7c4
+.debug_abbrev   0x00000000      0x83d
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x144 main.o
- .debug_abbrev  0x00000144      0x376 os.o
- .debug_abbrev  0x000004ba      0x186 trace/trace.o
- .debug_abbrev  0x00000640      0x184 uart/uart.o
+ .debug_abbrev  0x00000000      0x14c main.o
+ .debug_abbrev  0x0000014c      0x3e7 os.o
+ .debug_abbrev  0x00000533      0x186 trace/trace.o
+ .debug_abbrev  0x000006b9      0x184 uart/uart.o
 
-.debug_line     0x00000000      0xd31
+.debug_line     0x00000000      0xfa4
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x1b5 main.o
- .debug_line    0x000001b5      0x806 os.o
- .debug_line    0x000009bb      0x195 trace/trace.o
- .debug_line    0x00000b50      0x1e1 uart/uart.o
+ .debug_line    0x00000000      0x1e3 main.o
+ .debug_line    0x000001e3      0xa51 os.o
+ .debug_line    0x00000c34      0x18f trace/trace.o
+ .debug_line    0x00000dc3      0x1e1 uart/uart.o
 
-.debug_frame    0x00000000      0x33c
+.debug_frame    0x00000000      0x3c4
  *(.debug_frame)
- .debug_frame   0x00000000       0x30 main.o
- .debug_frame   0x00000030      0x17c os.o
- .debug_frame   0x000001ac       0xb8 trace/trace.o
- .debug_frame   0x00000264       0xd8 uart/uart.o
+ .debug_frame   0x00000000       0x64 main.o
+ .debug_frame   0x00000064      0x1d0 os.o
+ .debug_frame   0x00000234       0xb8 trace/trace.o
+ .debug_frame   0x000002ec       0xd8 uart/uart.o
 
-.debug_str      0x00000000      0x829
+.debug_str      0x00000000      0xa4f
  *(.debug_str)
- .debug_str     0x00000000      0x241 main.o
-                                0x27a (size before relaxing)
- .debug_str     0x00000241      0x446 os.o
-                                0x673 (size before relaxing)
- .debug_str     0x00000687       0xc7 trace/trace.o
+ .debug_str     0x00000000      0x2ce main.o
+                                0x327 (size before relaxing)
+ .debug_str     0x000002ce      0x5df os.o
+                                0x861 (size before relaxing)
+ .debug_str     0x000008ad       0xc7 trace/trace.o
                                 0x2ce (size before relaxing)
- .debug_str     0x0000074e       0xdb uart/uart.o
+ .debug_str     0x00000974       0xdb uart/uart.o
                                 0x2b1 (size before relaxing)
 
-.debug_loc      0x00000000      0xb58
+.debug_loc      0x00000000      0xcdc
  *(.debug_loc)
- .debug_loc     0x00000000       0x8e main.o
- .debug_loc     0x0000008e      0x75c os.o
- .debug_loc     0x000007ea      0x1d1 trace/trace.o
- .debug_loc     0x000009bb      0x19d uart/uart.o
+ .debug_loc     0x00000000      0x96e os.o
+ .debug_loc     0x0000096e      0x1d1 trace/trace.o
+ .debug_loc     0x00000b3f      0x19d uart/uart.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -743,12 +962,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x160
+.debug_ranges   0x00000000      0x218
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x10 main.o
- .debug_ranges  0x00000010       0xd8 os.o
- .debug_ranges  0x000000e8       0x30 trace/trace.o
- .debug_ranges  0x00000118       0x48 uart/uart.o
+ .debug_ranges  0x00000000       0x30 main.o
+ .debug_ranges  0x00000030      0x170 os.o
+ .debug_ranges  0x000001a0       0x30 trace/trace.o
+ .debug_ranges  0x000001d0       0x48 uart/uart.o
 
 .debug_macro
  *(.debug_macro)

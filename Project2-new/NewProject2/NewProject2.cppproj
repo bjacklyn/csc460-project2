@@ -81,44 +81,44 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGccCpp>
-  <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
-  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
-  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>DEBUG</Value>
-    </ListValues>
-  </avrgcc.compiler.symbols.DefSymbols>
-  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcccpp.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>DEBUG</Value>
-      <Value>F_CPU=16000000UL</Value>
-    </ListValues>
-  </avrgcccpp.compiler.symbols.DefSymbols>
-  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
-  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
-  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
-  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
-  <avrgcccpp.linker.libraries.Libraries>
-    <ListValues>
-      <Value>libm</Value>
-    </ListValues>
-  </avrgcccpp.linker.libraries.Libraries>
-  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
-</AvrGccCpp>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+            <Value>F_CPU=16000000UL</Value>
+          </ListValues>
+        </avrgcccpp.compiler.symbols.DefSymbols>
+        <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcccpp.linker.libraries.Libraries>
+        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+      </AvrGccCpp>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
@@ -141,6 +141,69 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="os.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test022_service_publish_from_interrupt.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test021_service_multiple_subscribe_and_publish.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test020_service_publish_all_task_levels.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test019_service_subscribe_non_existing_service.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test018_service_invalid_periodic_subscribe.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test017_service_subscribe_all_task_levels.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test016_service_init_too_many_services.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test015_service_init.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test014_all_tasks.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test013_periodic_invalid_tasks_scheduling.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test012_periodic_invalid_wcet.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test011_periodic_system_queue2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test010_periodic_system_queue1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test009_periodic_rr_queue1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test008_periodic_valid_tasks_scheduling.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test007_periodic_queue3.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test006_periodic_queue2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test005_periodic_queue1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test004_roundrobin_queue2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test003_roundrobin_queue1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test002_system_queue.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="tests\test001_now_roll_over.cpp">

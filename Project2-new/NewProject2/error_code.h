@@ -15,19 +15,7 @@
 
 enum {
 
-/** GREEN ERRORS -- Initialize time errors. */
-    
-/** PPP invalid -- Names must be in range [0 .. MAXPROCESS] */
-ERR_1_PPP_NAME_OUT_OF_RANGE,
-
-/** PERIODIC task assigned name IDLE */
-ERR_3_PERIODIC_NAMED_IDLE,
-
-/** Time interval 0 in PPP array */
-ERR_6_TIME_INTERVAL_IN_PPP_0,
-
-
-/** RED ERRORS -- Run time errors. */
+/** Run time errors. */
 
 /** User called OS_Abort() */
 ERR_RUN_1_USER_CALLED_OS_ABORT,
@@ -43,6 +31,15 @@ ERR_RUN_4_ILLEGAL_ISR_KERNEL_REQUEST,
 
 /** RTOS Internal error in handling request. */
 ERR_RUN_5_RTOS_INTERNAL_ERROR,
+
+/** PERIODIC task is invalid during scheduling process. */
+ERR_RUN_6_INVALID_PERIODIC_SCHEDULING,
+
+/** PERIODIC task tried to subscribe. */
+ERR_RUN_7_ILLEGAL_PERIODIC_TASK_SUBSCRIBED_TO_SERVICE,
+
+/** Task tried to subscribe to service which doesn't exist. */
+ERR_RUN_8_SUBSCRIBED_TO_NON_EXISTING_SERVICE,
 
 };
 

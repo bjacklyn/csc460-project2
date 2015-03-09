@@ -66,6 +66,9 @@ typedef enum
     TASK_TERMINATE,
     TASK_NEXT,
     TASK_GET_ARG,
+	SERVICE_INIT,
+	SERVICE_SUBSCRIBE,
+	SERVICE_PUBLISH,
 }
 kernel_request_t;
 
@@ -101,14 +104,14 @@ struct td_struct
     uint8_t                         stack[MAXSTACK];
     /** A variable to save the hardware SP into when the task is suspended. */
     uint8_t*               volatile sp;   /* stack pointer into the "workSpace" */
-    /** PERIODIC tasks need a name in the PPP array. */
-    uint8_t                         name;
     /** The state of the task in this descriptor. */
     task_state_t                    state;
     /** The argument passed to Task_Create for this task. */
     int                             arg;
     /** The priority (type) of this task. */
     uint8_t                         level;
+	/** The pointer to this task's service data if it is subscribed.*/
+	int16_t*						service_data;
 	/** The period (number of ticks) for a periodic task */
 	uint16_t						period;
 	/** The worst case estimated time for a periodic task */
@@ -117,8 +120,12 @@ struct td_struct
 	uint16_t						offset;
 	/** The last time this task ran. */	
 	uint16_t						last;
-	
-	
+	/** The last time this task ran. */
+	bool							ran_once;
+	/** The number of ms running before the current scheduling of task. */
+	uint16_t						ticks_running_previous;
+	/** The number of ms currently running without preemption. */
+	uint16_t						ticks_running_no_preemp;
     /** A link to the next task descriptor in the queue holding this task. */
     task_descriptor_t*              next;
 };
@@ -129,10 +136,10 @@ struct td_struct
  */
 typedef struct
 {
-    /** The first item in the queue. NULL if the queue is empty. */
-    task_descriptor_t*  head;
-    /** The last item in the queue. Undefined if the queue is empty. */
-    task_descriptor_t*  tail;
+	/** The first item in the queue. NULL if the queue is empty. */
+	task_descriptor_t*  head;
+	/** The last item in the queue. Undefined if the queue is empty. */
+	task_descriptor_t*  tail;
 }
 queue_t;
 
