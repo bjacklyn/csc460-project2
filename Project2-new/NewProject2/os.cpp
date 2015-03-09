@@ -107,9 +107,8 @@ static void kernel_update_ticker(void);
 static void idle (void);
 static void _delay_25ms(void);
 
-/*
- * FUNCTIONS
- */
+/* FUNCTIONS */
+
 /**
  *  @brief The idle task does nothing but busy loop.
  */
@@ -122,7 +121,6 @@ static void idle (void)
 
 /**
  * @fn kernel_main_loop
- *
  * @brief The heart of the RTOS, the main loop where the kernel is entered and exited.
  *
  * The complete function is:
@@ -152,8 +150,7 @@ static void kernel_main_loop(void)
 
 /**
  * @fn kernel_dispatch
- *
- *@brief The second part of the scheduler.
+ * @brief The second part of the scheduler.
  *
  * Chooses the next task to run.
  *
@@ -201,8 +198,7 @@ static void kernel_dispatch(void)
 
 /**
  * @fn kernel_handle_request
- *
- *@brief The first part of the scheduler.
+ * @brief The first part of the scheduler.
  *
  * Perform some action based on the system call or timer tick.
  * Perhaps place the current process in a ready or waiting queue.
@@ -350,9 +346,8 @@ static void kernel_handle_request(void)
 }
 
 
-/*
- * Context switching
- */
+/* Context switching */
+
 /**
  * It is important to keep the order of context saving and restoring exactly
  * in reverse. Also, when a new task is created, it is important to
@@ -415,17 +410,17 @@ static void kernel_handle_request(void)
  * @brief Pop all registers and the status register.
  */
 #define    RESTORE_CTX()    asm volatile (\
-    "pop    r0                \n\t"\
-    "pop    r1                \n\t"\
-    "pop    r2                \n\t"\
-    "pop    r3                \n\t"\
-    "pop    r4                \n\t"\
-    "pop    r5                \n\t"\
-    "pop    r6                \n\t"\
-    "pop    r7                \n\t"\
-    "pop    r8                \n\t"\
-    "pop    r9                \n\t"\
-    "pop    r10             \n\t"\
+    "pop    r0				\n\t"\
+    "pop    r1				\n\t"\
+    "pop    r2				\n\t"\
+    "pop    r3				\n\t"\
+    "pop    r4				\n\t"\
+    "pop    r5				\n\t"\
+    "pop    r6				\n\t"\
+    "pop    r7				\n\t"\
+    "pop    r8				\n\t"\
+    "pop    r9				\n\t"\
+    "pop    r10				\n\t"\
     "pop    r11             \n\t"\
     "pop    r12             \n\t"\
     "pop    r13             \n\t"\
@@ -455,7 +450,6 @@ static void kernel_handle_request(void)
 
 /**
  * @fn exit_kernel
- *
  * @brief The actual context switching code begins here.
  *
  * This function is called by the kernel. Upon entry, we are using
@@ -506,7 +500,6 @@ static void exit_kernel(void)
 
 /**
  * @fn enter_kernel
- *
  * @brief All system calls eventually enter here.
  *
  * Assumption: We are still executing on cur_task's stack.
@@ -548,7 +541,6 @@ static void enter_kernel(void)
 
 /**
  * @fn TIMER1_COMPA_vect
- *
  * @brief The interrupt handler for output compare interrupts on Timer 1
  *
  * Used to enter the kernel when a tick expires.
@@ -623,9 +615,8 @@ void TIMER1_COMPA_vect(void)
 }
 
 
-/*
- * Tasks Functions
- */
+/* Tasks Functions */
+
 /**
  *  @brief Kernel function to create a new task.
  *
@@ -633,6 +624,7 @@ void TIMER1_COMPA_vect(void)
  * it has called "enter_kernel()"; so that when we switch to it later, we
  * can just restore its execution context on its stack.
  * @sa enter_kernel
+ * @return 0 or 1
  */
 static int kernel_create_task()
 {
@@ -736,8 +728,6 @@ static int kernel_create_task()
 		/* idle task does not go in a queue */
 		break;
 	}
-
-
     return 1;
 }
 
@@ -764,6 +754,9 @@ static void kernel_service_subscribe(void)
 	enqueue(&service_queue[handle], cur_task);
 }
 
+/**
+ * @brief Kernel function to send a signal to the task in the waiting queue.
+ */
 static void kernel_service_publish(void)
 {
 	uint8_t handle = get_service_handle();
@@ -817,8 +810,9 @@ static void kernel_service_publish(void)
 	}
 }
 
-/*
- * Retrieves the index handle to the service array from the SERVICE pointer.
+/**
+ * @brief Retrieves the index handle to the service array from the SERVICE pointer.
+ * @return handle (uint8_t)
  */
 static uint8_t get_service_handle(void)
 {
@@ -835,13 +829,10 @@ static uint8_t get_service_handle(void)
 		return handle;
 }
 
-/*
- * Queue manipulation.
- */
+/* Queue manipulation. */
 
 /**
  * @brief Add a task the head of the queue
- *
  * @param queue_ptr the queue to insert in
  * @param task_to_add the task descriptor to add
  */
@@ -865,7 +856,6 @@ static void enqueue(queue_t* queue_ptr, task_descriptor_t* task_to_add)
 
 /**
  * @brief Add a task the periodic queue sorted by tasks that will run soonest
- *
  * @param task_to_add the task descriptor to add
  */
 static void enqueue_periodic(task_descriptor_t* task_to_add)
@@ -905,7 +895,6 @@ static void enqueue_periodic(task_descriptor_t* task_to_add)
 
 /**
  * @brief Pops head of queue and returns it.
- *
  * @param queue_ptr the queue to pop
  * @return the popped task descriptor
  */
@@ -1034,7 +1023,8 @@ static void _delay_25ms(void)
 }
 
 
-/** @brief Abort the execution of this RTOS due to an unrecoverable erorr.
+/** 
+ *@brief Abort the execution of this RTOS due to an unrecoverable erorr.
  */
 void OS_Abort(void)
 {
@@ -1100,9 +1090,12 @@ void OS_Abort(void)
     }
 }
 
- /**
-   * @brief Creates a system task and returns 0 if all went well.
-   */
+/**
+ * @brief Creates a system task and returns 0 if all went well.
+ * @param (*f) the task
+ * @param arg (int16_t)
+ * @return retval (int)
+ */
 int8_t Task_Create_System(void (*f)(void), int16_t arg) 
 {
     int retval;
@@ -1124,9 +1117,12 @@ int8_t Task_Create_System(void (*f)(void), int16_t arg)
     return retval;
 }
 
- /**
-   * @brief Creates a round robin task and returns 0 if all went well.
-   */
+/**
+ * @brief Creates a round robin task and returns 0 if all went well.
+ * @param (*f) the task
+ * @param arg (int16_t)
+ * @return retval (int)
+ */
 int8_t Task_Create_RR(void (*f)(void), int16_t arg)
 {
     int retval;
@@ -1148,9 +1144,15 @@ int8_t Task_Create_RR(void (*f)(void), int16_t arg)
     return retval;
 }
 
- /**
-   * @brief Creates a periodic task and returns 0 if all went well.
-   */
+/**
+ * @brief Creates a periodic task and returns 0 if all went well.
+ * @param (*f) the task
+ * @param arg (uint16_t)
+ * @param period (uint16_t) how often in runs based on ticks
+ * @param wcet (uint16_t) worst case execution time
+ * @param start (uint16_t) first time the task runs
+ * @return retval (int)
+ */
 int8_t Task_Create_Periodic(void(*f)(void), int16_t arg, uint16_t period, uint16_t wcet, uint16_t start)
 {
     int retval;
@@ -1176,8 +1178,8 @@ int8_t Task_Create_Periodic(void(*f)(void), int16_t arg, uint16_t period, uint16
 }
 
 /**
-  * @brief The calling task gives up its share of the processor voluntarily.
-  */
+ * @brief The calling task gives up its share of the processor voluntarily.
+ */
 void Task_Next()
 {
     uint8_t volatile sreg;
@@ -1193,8 +1195,8 @@ void Task_Next()
 
 
 /**
-  * @brief The calling task terminates itself.
-  */
+ * @brief The calling task terminates itself.
+ */
 void Task_Terminate()
 {
     uint8_t sreg;
@@ -1209,7 +1211,8 @@ void Task_Terminate()
 }
 
 
-/** @brief Retrieve the assigned parameter.
+/**
+ * @brief Retrieve the assigned parameter.
  */
 int Task_GetArg(void)
 {
@@ -1226,6 +1229,10 @@ int Task_GetArg(void)
     return arg;
 }
 
+/**
+ * @brief Initializes the services
+ * @return service_ptr (SERVICE)
+ */
 SERVICE* Service_Init()
 {
 	SERVICE* service_ptr;
@@ -1243,6 +1250,11 @@ SERVICE* Service_Init()
 	return service_ptr;
 }
 
+/**
+ * @brief Subscribes to a service
+ * @param s (SERVICE)
+ * @param v (int16_t)
+ */
 void Service_Subscribe( SERVICE *s, int16_t *v )
 {
 	uint8_t sreg = SREG;
@@ -1258,6 +1270,11 @@ void Service_Subscribe( SERVICE *s, int16_t *v )
 	SREG = sreg;
 }
 
+/**
+ * @brief Publishes to the service
+ * @param s (SERVICE)
+ * @param v (int16_t)
+ */
 void Service_Publish( SERVICE *s, int16_t v )
 {
 	uint8_t sreg= SREG;
@@ -1273,10 +1290,17 @@ void Service_Publish( SERVICE *s, int16_t v )
 
 #define CYCLES_IN_MS (TICK_CYCLES/TICK)
 
+/**
+ * @brief gets the current milliseconds since the system started 
+ */
 uint16_t Now() {
 	return ms_counter + ((10000 - (OCR1A - TCNT1))/CYCLES_IN_MS);
 }
 
+/**
+ * @brief enables or disables preemption in tasks
+ * @param preemptable (bool)
+ */
 void Set_Tasks_Preemptable(bool preemptable)
 {
 	tasks_preemptable = preemptable;
