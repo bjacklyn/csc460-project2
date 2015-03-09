@@ -43,8 +43,8 @@ void print_trace()
     int i;
     int returned_chars;
     
-	if (!trace_printed)
-	{
+// 	if (!trace_printed)
+// 	{
         /* the test header */
         returned_chars = sprintf((char*)&trace_buffer, "T%03d;", trace_number);
         uart_write((uint8_t*)trace_buffer, returned_chars);    
@@ -60,13 +60,13 @@ void print_trace()
 
         trace_printed = 1;
         trace_counter = 0;
-    }
+//    }
 }
 
 /** 
  * Add a number to the trace array and increment the trace counter
  * 
- * @param number unisigned integer to add
+ * @param number unsigned integer to add
  */
 void add_to_trace(uint16_t number)
 {
@@ -74,7 +74,7 @@ void add_to_trace(uint16_t number)
     {
         trace_array[trace_counter] = number;
         trace_counter++;
-    }    
+    }
 }
 
 /** 

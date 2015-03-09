@@ -35,16 +35,92 @@ Discarded input sections
  .text          0x00000000        0x0 os.o
  .data          0x00000000        0x0 os.o
  .bss           0x00000000        0x0 os.o
- .text.Task_Create_System
-                0x00000000       0x34 os.o
- .text.Task_Create_RR
-                0x00000000       0x34 os.o
- .text.Task_Create_Periodic
-                0x00000000       0x52 os.o
+ .text.queue_size
+                0x00000000       0x26 os.o
+ .text.get_system_queue
+                0x00000000        0x6 os.o
  .text.Task_Next
                 0x00000000       0x26 os.o
  .text.Task_GetArg
                 0x00000000       0x18 os.o
+ .text          0x00000000        0x0 tests/test014_all_tasks.o
+ .data          0x00000000        0x0 tests/test014_all_tasks.o
+ .bss           0x00000000        0x0 tests/test014_all_tasks.o
+ .debug_line    0x00000000        0x0 tests/test014_all_tasks.o
+ .debug_str     0x00000000        0x0 tests/test014_all_tasks.o
+ .comment       0x00000000       0x31 tests/test014_all_tasks.o
+ .text          0x00000000        0x0 tests/test013_periodic_invalid_schedule.o
+ .data          0x00000000        0x0 tests/test013_periodic_invalid_schedule.o
+ .bss           0x00000000        0x0 tests/test013_periodic_invalid_schedule.o
+ .debug_line    0x00000000        0x0 tests/test013_periodic_invalid_schedule.o
+ .debug_str     0x00000000        0x0 tests/test013_periodic_invalid_schedule.o
+ .comment       0x00000000       0x31 tests/test013_periodic_invalid_schedule.o
+ .text          0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .data          0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .bss           0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .debug_line    0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .debug_str     0x00000000        0x0 tests/test012_periodic_invalid_wcet.o
+ .comment       0x00000000       0x31 tests/test012_periodic_invalid_wcet.o
+ .text          0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .data          0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .bss           0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .debug_line    0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .debug_str     0x00000000        0x0 tests/test011_periodic_system_queue2.o
+ .comment       0x00000000       0x31 tests/test011_periodic_system_queue2.o
+ .text          0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .data          0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .bss           0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .debug_line    0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .debug_str     0x00000000        0x0 tests/test010_periodic_system_queue1.o
+ .comment       0x00000000       0x31 tests/test010_periodic_system_queue1.o
+ .text          0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .data          0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .bss           0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .debug_line    0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .debug_str     0x00000000        0x0 tests/test009_periodic_rr_queue1.o
+ .comment       0x00000000       0x31 tests/test009_periodic_rr_queue1.o
+ .text          0x00000000        0x0 tests/test008_periodic_queue4.o
+ .data          0x00000000        0x0 tests/test008_periodic_queue4.o
+ .bss           0x00000000        0x0 tests/test008_periodic_queue4.o
+ .debug_line    0x00000000        0x0 tests/test008_periodic_queue4.o
+ .debug_str     0x00000000        0x0 tests/test008_periodic_queue4.o
+ .comment       0x00000000       0x31 tests/test008_periodic_queue4.o
+ .text          0x00000000        0x0 tests/test007_periodic_queue3.o
+ .data          0x00000000        0x0 tests/test007_periodic_queue3.o
+ .bss           0x00000000        0x0 tests/test007_periodic_queue3.o
+ .debug_line    0x00000000        0x0 tests/test007_periodic_queue3.o
+ .debug_str     0x00000000        0x0 tests/test007_periodic_queue3.o
+ .comment       0x00000000       0x31 tests/test007_periodic_queue3.o
+ .text          0x00000000        0x0 tests/test006_periodic_queue2.o
+ .data          0x00000000        0x0 tests/test006_periodic_queue2.o
+ .bss           0x00000000        0x0 tests/test006_periodic_queue2.o
+ .debug_line    0x00000000        0x0 tests/test006_periodic_queue2.o
+ .debug_str     0x00000000        0x0 tests/test006_periodic_queue2.o
+ .comment       0x00000000       0x31 tests/test006_periodic_queue2.o
+ .text          0x00000000        0x0 tests/test005_periodic_queue1.o
+ .data          0x00000000        0x0 tests/test005_periodic_queue1.o
+ .bss           0x00000000        0x0 tests/test005_periodic_queue1.o
+ .debug_line    0x00000000        0x0 tests/test005_periodic_queue1.o
+ .debug_str     0x00000000        0x0 tests/test005_periodic_queue1.o
+ .comment       0x00000000       0x31 tests/test005_periodic_queue1.o
+ .text          0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .data          0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .bss           0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .debug_line    0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .debug_str     0x00000000        0x0 tests/test004_roundrobin_queue2.o
+ .comment       0x00000000       0x31 tests/test004_roundrobin_queue2.o
+ .text          0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .data          0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .bss           0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .debug_line    0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .debug_str     0x00000000        0x0 tests/test003_roundrobin_queue1.o
+ .comment       0x00000000       0x31 tests/test003_roundrobin_queue1.o
+ .text          0x00000000        0x0 tests/test002_system_queue.o
+ .data          0x00000000        0x0 tests/test002_system_queue.o
+ .bss           0x00000000        0x0 tests/test002_system_queue.o
+ .debug_line    0x00000000        0x0 tests/test002_system_queue.o
+ .debug_str     0x00000000        0x0 tests/test002_system_queue.o
+ .comment       0x00000000       0x31 tests/test002_system_queue.o
  .text          0x00000000        0x0 tests/test001_now_roll_over.o
  .data          0x00000000        0x0 tests/test001_now_roll_over.o
  .bss           0x00000000        0x0 tests/test001_now_roll_over.o
@@ -200,6 +276,19 @@ Address of section .data set to 0x800200
 LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
 LOAD main.o
 LOAD os.o
+LOAD tests/test014_all_tasks.o
+LOAD tests/test013_periodic_invalid_schedule.o
+LOAD tests/test012_periodic_invalid_wcet.o
+LOAD tests/test011_periodic_system_queue2.o
+LOAD tests/test010_periodic_system_queue1.o
+LOAD tests/test009_periodic_rr_queue1.o
+LOAD tests/test008_periodic_queue4.o
+LOAD tests/test007_periodic_queue3.o
+LOAD tests/test006_periodic_queue2.o
+LOAD tests/test005_periodic_queue1.o
+LOAD tests/test004_roundrobin_queue2.o
+LOAD tests/test003_roundrobin_queue1.o
+LOAD tests/test002_system_queue.o
 LOAD tests/test001_now_roll_over.o
 LOAD tests/test000_now.o
 LOAD trace/trace.o
@@ -305,7 +394,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x11e4
+.text           0x00000000     0x13ca
  *(.vectors)
  .vectors       0x00000000       0xe4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
                 0x00000000                __vector_default
@@ -419,94 +508,112 @@ END GROUP
                 0x00000124                __vector_42
                 0x00000126                . = ALIGN (0x2)
  *(.text.*)
+ .text._Z6systemv
+                0x00000126        0x8 main.o
+                0x00000126                _Z6systemv
+ .text._Z8periodicv
+                0x0000012e        0x8 main.o
+                0x0000012e                _Z8periodicv
+ .text._Z10roundrobinv
+                0x00000136        0xa main.o
+                0x00000136                _Z10roundrobinv
  .text._Z6r_mainv
-                0x00000126       0x36 main.o
-                0x00000126                _Z6r_mainv
+                0x00000140       0x3e main.o
+                0x00000140                _Z6r_mainv
  .text._ZL4idlev
-                0x0000015c        0x2 os.o
+                0x0000017e        0x2 os.o
  .text._ZL11exit_kernelv
-                0x0000015e       0xb2 os.o
+                0x00000180       0xb2 os.o
  .text._ZL12enter_kernelv
-                0x00000210       0xb2 os.o
+                0x00000232       0xb2 os.o
  .text._ZL7dequeueP7queue_t
-                0x000002c2       0x20 os.o
+                0x000002e4       0x20 os.o
  .text.Task_Terminate
-                0x000002e2       0x14 os.o
-                0x000002e2                Task_Terminate
+                0x00000304       0x14 os.o
+                0x00000304                Task_Terminate
  .text.__vector_17
-                0x000002f6       0xe8 os.o
-                0x000002f6                __vector_17
+                0x00000318       0xe8 os.o
+                0x00000318                __vector_17
  .text.OS_Abort
-                0x000003de       0xba os.o
-                0x000003de                OS_Abort
- .text.Now      0x00000498       0x44 os.o
-                0x00000498                Now
+                0x00000400       0xb8 os.o
+                0x00000400                OS_Abort
+ .text.Task_Create_System
+                0x000004b8       0x32 os.o
+                0x000004b8                Task_Create_System
+ .text.Task_Create_RR
+                0x000004ea       0x32 os.o
+                0x000004ea                Task_Create_RR
+ .text.Task_Create_Periodic
+                0x0000051c       0x50 os.o
+                0x0000051c                Task_Create_Periodic
+ .text.Now      0x0000056c       0x44 os.o
+                0x0000056c                Now
  .text._ZL7enqueueP7queue_tP9td_struct
-                0x000004dc      0x10c os.o
+                0x000005b0      0x122 os.o
  .text._ZL18kernel_create_taskv
-                0x000005e8      0x106 os.o
+                0x000006d2      0x122 os.o
  .text._Z7OS_Initv
-                0x000006ee      0x326 os.o
-                0x000006ee                _Z7OS_Initv
- .text.main     0x00000a14        0x2 os.o
-                0x00000a14                main
+                0x000007f4      0x40e os.o
+                0x000007f4                _Z7OS_Initv
+ .text.main     0x00000c02        0x2 os.o
+                0x00000c02                main
  .text._Z11print_tracev
-                0x00000a16       0xc6 trace/trace.o
-                0x00000a16                _Z11print_tracev
+                0x00000c04       0xbe trace/trace.o
+                0x00000c04                _Z11print_tracev
  .text._Z12add_to_tracej
-                0x00000adc       0x38 trace/trace.o
-                0x00000adc                _Z12add_to_tracej
+                0x00000cc2       0x38 trace/trace.o
+                0x00000cc2                _Z12add_to_tracej
  .text._Z14set_trace_testh
-                0x00000b14        0x6 trace/trace.o
-                0x00000b14                _Z14set_trace_testh
+                0x00000cfa        0x6 trace/trace.o
+                0x00000cfa                _Z14set_trace_testh
  .text._Z12uart_putcharc
-                0x00000b1a       0x14 uart/uart.o
-                0x00000b1a                _Z12uart_putcharc
+                0x00000d00       0x14 uart/uart.o
+                0x00000d00                _Z12uart_putcharc
  .text._Z11uart_putstrPc
-                0x00000b2e       0x1c uart/uart.o
-                0x00000b2e                _Z11uart_putstrPc
+                0x00000d14       0x1c uart/uart.o
+                0x00000d14                _Z11uart_putstrPc
  .text._Z10uart_writePhi
-                0x00000b4a        0x8 uart/uart.o
-                0x00000b4a                _Z10uart_writePhi
+                0x00000d30        0x8 uart/uart.o
+                0x00000d30                _Z10uart_writePhi
  .text._Z9uart_initv
-                0x00000b52       0x24 uart/uart.o
-                0x00000b52                _Z9uart_initv
+                0x00000d38       0x24 uart/uart.o
+                0x00000d38                _Z9uart_initv
  .text.__vector_25
-                0x00000b76       0x7a uart/uart.o
-                0x00000b76                __vector_25
+                0x00000d5c       0x7a uart/uart.o
+                0x00000d5c                __vector_25
  .text.libgcc.div
-                0x00000bf0       0x26 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_divmodhi4.o)
-                0x00000bf0                _div
-                0x00000bf0                __divmodhi4
+                0x00000dd6       0x26 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_divmodhi4.o)
+                0x00000dd6                _div
+                0x00000dd6                __divmodhi4
  .text.libgcc.mul
-                0x00000c16       0x1e c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_umulhisi3.o)
-                0x00000c16                __umulhisi3
+                0x00000dfc       0x1e c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_umulhisi3.o)
+                0x00000dfc                __umulhisi3
  .text.libgcc.div
-                0x00000c34       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_udivmodhi4.o)
-                0x00000c34                __udivmodhi4
+                0x00000e1a       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_udivmodhi4.o)
+                0x00000e1a                __udivmodhi4
  .text.avr-libc
-                0x00000c5c       0x5c c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(sprintf.o)
-                0x00000c5c                sprintf
+                0x00000e42       0x5c c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(sprintf.o)
+                0x00000e42                sprintf
  .text.avr-libc
-                0x00000cb8      0x3dc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(vfprintf_std.o)
-                0x00000cb8                vfprintf
+                0x00000e9e      0x3dc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(vfprintf_std.o)
+                0x00000e9e                vfprintf
  .text.avr-libc
-                0x00001094       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(strnlen_P.o)
-                0x00001094                strnlen_P
+                0x0000127a       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(strnlen_P.o)
+                0x0000127a                strnlen_P
  .text.avr-libc
-                0x000010aa       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(strnlen.o)
-                0x000010aa                strnlen
+                0x00001290       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(strnlen.o)
+                0x00001290                strnlen
  .text.avr-libc
-                0x000010c0       0x64 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(fputc.o)
-                0x000010c0                fputc
+                0x000012a6       0x64 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(fputc.o)
+                0x000012a6                fputc
  .text.avr-libc
-                0x00001124       0xbc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(ultoa_invert.o)
-                0x00001124                __ultoa_invert
-                0x000011e0                . = ALIGN (0x2)
+                0x0000130a       0xbc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libc.a(ultoa_invert.o)
+                0x0000130a                __ultoa_invert
+                0x000013c6                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000011e0        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
-                0x000011e0                _exit
-                0x000011e0                exit
+ .fini9         0x000013c6        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
+                0x000013c6                _exit
+                0x000013c6                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -525,11 +632,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000011e0        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
+ .fini0         0x000013c6        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x000011e4                _etext = .
+                0x000013ca                _etext = .
 
-.data           0x00800200        0xc load address 0x000011e4
+.data           0x00800200        0xc load address 0x000013ca
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -544,7 +651,7 @@ END GROUP
                 0x0080020c                _edata = .
                 0x0080020c                PROVIDE (__data_end, .)
 
-.bss            0x0080020c      0xc48
+.bss            0x0080020c      0xc6c
                 0x0080020c                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -563,43 +670,43 @@ END GROUP
  .bss._ZL14kernel_request
                 0x00800229        0x1 os.o
  .bss._ZL9task_desc
-                0x0080022a      0x999 os.o
+                0x0080022a      0x9bd os.o
  .bss._ZL9kernel_sp
-                0x00800bc3        0x2 os.o
+                0x00800be7        0x2 os.o
  .bss._ZL8cur_task
-                0x00800bc5        0x2 os.o
+                0x00800be9        0x2 os.o
  .bss._ZL10ms_counter
-                0x00800bc7        0x2 os.o
+                0x00800beb        0x2 os.o
  .bss.trace_buffer
-                0x00800bc9       0x20 trace/trace.o
-                0x00800bc9                trace_buffer
+                0x00800bed       0x20 trace/trace.o
+                0x00800bed                trace_buffer
  .bss.trace_counter
-                0x00800be9        0x2 trace/trace.o
-                0x00800be9                trace_counter
+                0x00800c0d        0x2 trace/trace.o
+                0x00800c0d                trace_counter
  .bss.trace_array
-                0x00800beb      0x200 trace/trace.o
-                0x00800beb                trace_array
+                0x00800c0f      0x200 trace/trace.o
+                0x00800c0f                trace_array
  .bss.trace_printed
-                0x00800deb        0x1 trace/trace.o
-                0x00800deb                trace_printed
+                0x00800e0f        0x1 trace/trace.o
+                0x00800e0f                trace_printed
  .bss.trace_number
-                0x00800dec        0x1 trace/trace.o
-                0x00800dec                trace_number
+                0x00800e10        0x1 trace/trace.o
+                0x00800e10                trace_number
  .bss._ZL7uart_rx
-                0x00800ded        0x1 uart/uart.o
- .bss._ZL2rx    0x00800dee       0x64 uart/uart.o
- .bss._ZL3rxn   0x00800e52        0x2 uart/uart.o
+                0x00800e11        0x1 uart/uart.o
+ .bss._ZL2rx    0x00800e12       0x64 uart/uart.o
+ .bss._ZL3rxn   0x00800e76        0x2 uart/uart.o
  *(COMMON)
-                0x00800e54                PROVIDE (__bss_end, .)
-                0x000011e4                __data_load_start = LOADADDR (.data)
-                0x000011f0                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800e78                PROVIDE (__bss_end, .)
+                0x000013ca                __data_load_start = LOADADDR (.data)
+                0x000013d6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800e54        0x0
-                0x00800e54                PROVIDE (__noinit_start, .)
+.noinit         0x00800e78        0x0
+                0x00800e78                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800e54                PROVIDE (__noinit_end, .)
-                0x00800e54                _end = .
-                0x00800e54                PROVIDE (__heap_start, .)
+                0x00800e78                PROVIDE (__noinit_end, .)
+                0x00800e78                _end = .
+                0x00800e78                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -665,65 +772,65 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x158
+.debug_aranges  0x00000000      0x180
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x20 main.o
+                0x00000000       0x38 main.o
  .debug_aranges
-                0x00000020       0xa0 os.o
+                0x00000038       0xb0 os.o
  .debug_aranges
-                0x000000c0       0x40 trace/trace.o
+                0x000000e8       0x40 trace/trace.o
  .debug_aranges
-                0x00000100       0x58 uart/uart.o
+                0x00000128       0x58 uart/uart.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1399
+.debug_info     0x00000000     0x1530
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x1ee main.o
- .debug_info    0x000001ee      0xcf1 os.o
- .debug_info    0x00000edf      0x26f trace/trace.o
- .debug_info    0x0000114e      0x24b uart/uart.o
+ .debug_info    0x00000000      0x2c5 main.o
+ .debug_info    0x000002c5      0xdb1 os.o
+ .debug_info    0x00001076      0x26f trace/trace.o
+ .debug_info    0x000012e5      0x24b uart/uart.o
 
-.debug_abbrev   0x00000000      0x7c4
+.debug_abbrev   0x00000000      0x782
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x144 main.o
- .debug_abbrev  0x00000144      0x376 os.o
- .debug_abbrev  0x000004ba      0x186 trace/trace.o
- .debug_abbrev  0x00000640      0x184 uart/uart.o
+ .debug_abbrev  0x00000000       0xff main.o
+ .debug_abbrev  0x000000ff      0x379 os.o
+ .debug_abbrev  0x00000478      0x186 trace/trace.o
+ .debug_abbrev  0x000005fe      0x184 uart/uart.o
 
-.debug_line     0x00000000      0xd31
+.debug_line     0x00000000      0xd82
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x1b5 main.o
- .debug_line    0x000001b5      0x806 os.o
- .debug_line    0x000009bb      0x195 trace/trace.o
- .debug_line    0x00000b50      0x1e1 uart/uart.o
+ .debug_line    0x00000000      0x162 main.o
+ .debug_line    0x00000162      0x8b0 os.o
+ .debug_line    0x00000a12      0x18f trace/trace.o
+ .debug_line    0x00000ba1      0x1e1 uart/uart.o
 
-.debug_frame    0x00000000      0x33c
+.debug_frame    0x00000000      0x380
  *(.debug_frame)
- .debug_frame   0x00000000       0x30 main.o
- .debug_frame   0x00000030      0x17c os.o
- .debug_frame   0x000001ac       0xb8 trace/trace.o
- .debug_frame   0x00000264       0xd8 uart/uart.o
+ .debug_frame   0x00000000       0x60 main.o
+ .debug_frame   0x00000060      0x190 os.o
+ .debug_frame   0x000001f0       0xb8 trace/trace.o
+ .debug_frame   0x000002a8       0xd8 uart/uart.o
 
-.debug_str      0x00000000      0x829
+.debug_str      0x00000000      0x8a0
  *(.debug_str)
- .debug_str     0x00000000      0x241 main.o
-                                0x27a (size before relaxing)
- .debug_str     0x00000241      0x446 os.o
-                                0x673 (size before relaxing)
- .debug_str     0x00000687       0xc7 trace/trace.o
+ .debug_str     0x00000000      0x27e main.o
+                                0x2c6 (size before relaxing)
+ .debug_str     0x0000027e      0x480 os.o
+                                0x6be (size before relaxing)
+ .debug_str     0x000006fe       0xc7 trace/trace.o
                                 0x2ce (size before relaxing)
- .debug_str     0x0000074e       0xdb uart/uart.o
+ .debug_str     0x000007c5       0xdb uart/uart.o
                                 0x2b1 (size before relaxing)
 
-.debug_loc      0x00000000      0xb58
+.debug_loc      0x00000000      0xb3c
  *(.debug_loc)
- .debug_loc     0x00000000       0x8e main.o
- .debug_loc     0x0000008e      0x75c os.o
- .debug_loc     0x000007ea      0x1d1 trace/trace.o
- .debug_loc     0x000009bb      0x19d uart/uart.o
+ .debug_loc     0x00000000       0x2f main.o
+ .debug_loc     0x0000002f      0x79f os.o
+ .debug_loc     0x000007ce      0x1d1 trace/trace.o
+ .debug_loc     0x0000099f      0x19d uart/uart.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -743,12 +850,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x160
+.debug_ranges   0x00000000      0x188
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x10 main.o
- .debug_ranges  0x00000010       0xd8 os.o
- .debug_ranges  0x000000e8       0x30 trace/trace.o
- .debug_ranges  0x00000118       0x48 uart/uart.o
+ .debug_ranges  0x00000000       0x28 main.o
+ .debug_ranges  0x00000028       0xe8 os.o
+ .debug_ranges  0x00000110       0x30 trace/trace.o
+ .debug_ranges  0x00000140       0x48 uart/uart.o
 
 .debug_macro
  *(.debug_macro)

@@ -101,8 +101,6 @@ struct td_struct
     uint8_t                         stack[MAXSTACK];
     /** A variable to save the hardware SP into when the task is suspended. */
     uint8_t*               volatile sp;   /* stack pointer into the "workSpace" */
-    /** PERIODIC tasks need a name in the PPP array. */
-    uint8_t                         name;
     /** The state of the task in this descriptor. */
     task_state_t                    state;
     /** The argument passed to Task_Create for this task. */
@@ -117,7 +115,12 @@ struct td_struct
 	uint16_t						offset;
 	/** The last time this task ran. */	
 	uint16_t						last;
-	
+	/** The last time this task ran. */
+	bool							ran_once;
+	/** The remaining number of ticks. */
+	uint16_t						ticks_running_previous;
+	/** Ticks running without preemption. */
+	uint16_t						ticks_running_no_preemp;
 	
     /** A link to the next task descriptor in the queue holding this task. */
     task_descriptor_t*              next;
@@ -129,10 +132,10 @@ struct td_struct
  */
 typedef struct
 {
-    /** The first item in the queue. NULL if the queue is empty. */
-    task_descriptor_t*  head;
-    /** The last item in the queue. Undefined if the queue is empty. */
-    task_descriptor_t*  tail;
+	/** The first item in the queue. NULL if the queue is empty. */
+	task_descriptor_t*  head;
+	/** The last item in the queue. Undefined if the queue is empty. */
+	task_descriptor_t*  tail;
 }
 queue_t;
 

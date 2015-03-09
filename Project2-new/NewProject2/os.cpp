@@ -17,6 +17,7 @@
 #include "kernel.h"
 #include "error_code.h"
 #include "main.h"
+#include "trace/trace.h"
 
 /* Needed for memset */
 /* #include <string.h> */
@@ -154,10 +155,18 @@ static void kernel_dispatch(void)
         {
             cur_task = dequeue(&system_queue);
         }
-        else if ((&periodic_queue)->head->offset < (now - (&periodic_queue)->head->last))
+        else if (periodic_queue.head != NULL && ((now - periodic_queue.head->last) >= (periodic_queue.head->offset + periodic_queue.head->period)))
         {
-            /* Keep running the current PERIODIC task. */
-            cur_task = dequeue(&periodic_queue);
+			/* Keep running the current PERIODIC task. */
+			cur_task = dequeue(&periodic_queue);
+			
+			cur_task->last += cur_task->period + cur_task->offset;
+			cur_task->ticks_running_no_preemp = now;
+			
+			if (periodic_queue.head != NULL && ((now - periodic_queue.head->last) >= (periodic_queue.head->offset + periodic_queue.head->period))) {
+				error_msg = ERR_RUN_6_INVALID_PERIODIC_SCHEDULING;
+				OS_Abort();
+			}
         }
         else if(rr_queue.head != NULL)
         {
@@ -180,7 +189,7 @@ static void kernel_dispatch(void)
  *@brief The first part of the scheduler.
  *
  * Perform some action based on the system call or timer tick.
- * Perhaps place the current process in a ready or waitng queue.
+ * Perhaps place the current process in a ready or waiting queue.
  */
 static void kernel_handle_request(void)
 {
@@ -212,7 +221,12 @@ static void kernel_handle_request(void)
             /* If new task is SYSTEM and cur is not, then don't run old one */
             if(kernel_request_create_args.level == SYSTEM && cur_task->level != SYSTEM)
             {
-                cur_task->state = READY;
+				cur_task->state = READY;
+				if(cur_task->level == PERIODIC) {
+					cur_task->ticks_running_previous += Now() - cur_task->ticks_running_no_preemp;
+					cur_task->last -= cur_task->period;
+					enqueue(&periodic_queue, cur_task);
+				} 
             }
 
             /* If cur is RR, it might be pre-empted by a new PERIODIC. */
@@ -245,7 +259,21 @@ static void kernel_handle_request(void)
 			break;
 
 	    case PERIODIC:
-			cur_task->last += cur_task->period;
+			if(((Now() - cur_task->ticks_running_no_preemp) + cur_task->ticks_running_previous) > cur_task->wcet)
+			{
+				/* error handling */
+				error_msg = ERR_RUN_3_PERIODIC_TOOK_TOO_LONG;
+				OS_Abort();
+			} else {
+				cur_task->ticks_running_previous = (uint16_t) 0;
+			}
+		
+			if (!cur_task->ran_once)
+			{
+				cur_task->ran_once = true;
+				cur_task->offset = (uint16_t) 0;
+			}
+			
 	        enqueue(&periodic_queue, cur_task);
 	        break;
 
@@ -573,7 +601,7 @@ static int kernel_create_task()
     }
 
 	/* idling "task" goes in last descriptor. */
-	if(kernel_request_create_args.level == NULL)
+	if(kernel_request_create_args.level == 0)//NULL)
 	{
 		p = &task_desc[MAXPROCESS];
 	}
@@ -606,7 +634,7 @@ static int kernel_create_task()
     /* stack_top[31] is r30. */
 	stack_top[32] = 0xEE;
     stack_top[33] = (uint8_t) _BV(SREG_I); /* set SREG_I bit in stored SREG. */
-    /* stack_top[33] is r31. */
+    /* stack_top[34] is r31. */
 
     /* We are placing the address (16-bit) of the functions
      * onto the stack in reverse byte order (least significant first, followed
@@ -632,10 +660,13 @@ static int kernel_create_task()
     p->level = kernel_request_create_args.level;
 	if (p->level == PERIODIC) 
 	{
-		p->offset = kernel_request_create_args.start;
+		p->offset = kernel_request_create_args.start - kernel_request_create_args.period;
 		p->period = kernel_request_create_args.period;
 		p->wcet = kernel_request_create_args.wcet;
+		p->ticks_running_previous = (uint16_t) 0;
+		p->ticks_running_no_preemp = (uint16_t) 0;
 		p->last = (uint16_t) 0;
+		p->ran_once = false;
 	}
 	switch(kernel_request_create_args.level)
 	{
@@ -671,10 +702,6 @@ static void kernel_terminate_task(void)
 {
     /* deallocate all resources used by this task */
     cur_task->state = DEAD;
-//     if(cur_task->level == PERIODIC)
-//     {
-//         name_to_task_ptr[cur_task->name] = NULL;
-//     }
     enqueue(&dead_pool_queue, cur_task);
 }
 
@@ -702,27 +729,18 @@ static void enqueue(queue_t* queue_ptr, task_descriptor_t* task_to_add)
 	
 	if(task_to_add->level == PERIODIC) 
 	{
-		task_descriptor_t* head_ptr = queue_ptr->head;
 		uint16_t now = Now();
-		if ((task_to_add->offset - (now - task_to_add->last)) < (head_ptr->offset - (now - head_ptr->last)))
+		task_descriptor_t* head_ptr = queue_ptr->head;
+		while(head_ptr != NULL)
 		{
-			task_to_add->next = queue_ptr->head;
-			queue_ptr->head = task_to_add;
-			return;
-		} 
-		else
-		{
-			while(head_ptr->next != NULL)
+			if (((task_to_add->offset + task_to_add->period) - (now - task_to_add->last)) < ((head_ptr->offset + head_ptr->period) - (now - head_ptr->last)))
 			{
-				if ((task_to_add->offset - (now - task_to_add->last)) < (head_ptr->next->offset - (now - head_ptr->next->last)))
-				{
-					task_to_add->next = head_ptr->next;
-					head_ptr->next = task_to_add;
-					return;
-				}
-				
-				head_ptr = head_ptr->next;
+				task_to_add->next = head_ptr->next;
+				head_ptr->next = task_to_add;
+				return;
 			}
+			
+			head_ptr = head_ptr->next;
 		}
 	}
 
@@ -750,6 +768,25 @@ static task_descriptor_t* dequeue(queue_t* queue_ptr)
     return task_ptr;
 }
 
+uint8_t queue_size(void* queue_ptr)
+{
+	task_descriptor_t* head = ((queue_t*) queue_ptr)->head;
+	uint8_t size = 0;
+	
+	while (head != NULL)
+	{
+		size++;
+		head = head->next;
+	}
+	
+	return size;
+}
+
+void* get_system_queue()
+{
+	return &dead_pool_queue;
+}
+
 
 /**
  * @brief Update the current time.
@@ -759,12 +796,11 @@ static task_descriptor_t* dequeue(queue_t* queue_ptr)
 static void kernel_update_ticker(void)
 {
     /* PORTD ^= LED_D5_RED; */
-   
+	
 	/* If Periodic task still running then error more than wcet */
 	if(cur_task != NULL && cur_task->level == PERIODIC && cur_task->state == RUNNING)
 	{
-		uint16_t now = Now();
-		if((cur_task->offset + cur_task->wcet) < (now - cur_task->last))
+		if(((Now() - cur_task->ticks_running_no_preemp) + cur_task->ticks_running_previous) > cur_task->wcet)
 		{
 			/* error handling */
 			error_msg = ERR_RUN_3_PERIODIC_TOOK_TOO_LONG;
@@ -795,7 +831,7 @@ static void kernel_slow_clock(void)
  * Point of entry from the C runtime crt0.S.
  */
 void OS_Init()
-{
+{	
     int i;
 
     /* Set up the clocks */
@@ -823,7 +859,7 @@ void OS_Init()
 
 	/* Create idle "task" */
     kernel_request_create_args.f = (voidfuncvoid_ptr)idle;
-    kernel_request_create_args.level = NULL;
+    kernel_request_create_args.level = IDLE;
     kernel_create_task();
 
     /* Create "main" task as SYSTEM level. */

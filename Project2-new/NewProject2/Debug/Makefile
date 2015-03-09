@@ -42,6 +42,19 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../main.cpp \
 ../os.cpp \
+../tests/test014_all_tasks.cpp \
+../tests/test013_periodic_invalid_schedule.cpp \
+../tests/test012_periodic_invalid_wcet.cpp \
+../tests/test011_periodic_system_queue2.cpp \
+../tests/test010_periodic_system_queue1.cpp \
+../tests/test009_periodic_rr_queue1.cpp \
+../tests/test008_periodic_queue4.cpp \
+../tests/test007_periodic_queue3.cpp \
+../tests/test006_periodic_queue2.cpp \
+../tests/test005_periodic_queue1.cpp \
+../tests/test004_roundrobin_queue2.cpp \
+../tests/test003_roundrobin_queue1.cpp \
+../tests/test002_system_queue.cpp \
 ../tests/test001_now_roll_over.cpp \
 ../tests/test000_now.cpp \
 ../trace/trace.cpp \
@@ -57,6 +70,19 @@ ASM_SRCS +=
 OBJS +=  \
 main.o \
 os.o \
+tests/test014_all_tasks.o \
+tests/test013_periodic_invalid_schedule.o \
+tests/test012_periodic_invalid_wcet.o \
+tests/test011_periodic_system_queue2.o \
+tests/test010_periodic_system_queue1.o \
+tests/test009_periodic_rr_queue1.o \
+tests/test008_periodic_queue4.o \
+tests/test007_periodic_queue3.o \
+tests/test006_periodic_queue2.o \
+tests/test005_periodic_queue1.o \
+tests/test004_roundrobin_queue2.o \
+tests/test003_roundrobin_queue1.o \
+tests/test002_system_queue.o \
 tests/test001_now_roll_over.o \
 tests/test000_now.o \
 trace/trace.o \
@@ -65,6 +91,19 @@ uart/uart.o
 OBJS_AS_ARGS +=  \
 main.o \
 os.o \
+tests/test014_all_tasks.o \
+tests/test013_periodic_invalid_schedule.o \
+tests/test012_periodic_invalid_wcet.o \
+tests/test011_periodic_system_queue2.o \
+tests/test010_periodic_system_queue1.o \
+tests/test009_periodic_rr_queue1.o \
+tests/test008_periodic_queue4.o \
+tests/test007_periodic_queue3.o \
+tests/test006_periodic_queue2.o \
+tests/test005_periodic_queue1.o \
+tests/test004_roundrobin_queue2.o \
+tests/test003_roundrobin_queue1.o \
+tests/test002_system_queue.o \
 tests/test001_now_roll_over.o \
 tests/test000_now.o \
 trace/trace.o \
@@ -73,6 +112,19 @@ uart/uart.o
 C_DEPS +=  \
 main.d \
 os.d \
+tests/test014_all_tasks.d \
+tests/test013_periodic_invalid_schedule.d \
+tests/test012_periodic_invalid_wcet.d \
+tests/test011_periodic_system_queue2.d \
+tests/test010_periodic_system_queue1.d \
+tests/test009_periodic_rr_queue1.d \
+tests/test008_periodic_queue4.d \
+tests/test007_periodic_queue3.d \
+tests/test006_periodic_queue2.d \
+tests/test005_periodic_queue1.d \
+tests/test004_roundrobin_queue2.d \
+tests/test003_roundrobin_queue1.d \
+tests/test002_system_queue.d \
 tests/test001_now_roll_over.d \
 tests/test000_now.d \
 trace/trace.d \
@@ -81,6 +133,19 @@ uart/uart.d
 C_DEPS_AS_ARGS +=  \
 main.d \
 os.d \
+tests/test014_all_tasks.d \
+tests/test013_periodic_invalid_schedule.d \
+tests/test012_periodic_invalid_wcet.d \
+tests/test011_periodic_system_queue2.d \
+tests/test010_periodic_system_queue1.d \
+tests/test009_periodic_rr_queue1.d \
+tests/test008_periodic_queue4.d \
+tests/test007_periodic_queue3.d \
+tests/test006_periodic_queue2.d \
+tests/test005_periodic_queue1.d \
+tests/test004_roundrobin_queue2.d \
+tests/test003_roundrobin_queue1.d \
+tests/test002_system_queue.d \
 tests/test001_now_roll_over.d \
 tests/test000_now.d \
 trace/trace.d \
@@ -100,6 +165,32 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
