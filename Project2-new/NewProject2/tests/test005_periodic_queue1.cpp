@@ -2,7 +2,7 @@
 
 /*
     Desired Trace
-    T005;1;50;
+    T005;1;250;
 */
 
 #include <avr/io.h>

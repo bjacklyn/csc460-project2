@@ -168,9 +168,6 @@ extern "C" {
  *
  */  
 #include "stdint.h"
-
-void* get_system_queue();
-uint8_t queue_size(void* queue_ptr);
    
 /*==================================================================  
  *             T Y P E S   &   C O N S T A N T S  
@@ -185,6 +182,9 @@ uint8_t queue_size(void* queue_ptr);
 
 /** max. number of processes supported */  
 #define MAXPROCESS		8   
+
+/** max. number of services supported */
+#define MAXSERVICE      MAXPROCESS
 
 /** time resolution */
 #define TICK			    5     // resolution of system clock in milliseconds
@@ -357,6 +357,8 @@ void Service_Publish( SERVICE *s, int16_t v );
   * purposes, it should be used for durations less than 65 seconds.
   */
 uint16_t Now();  // number of milliseconds since the RTOS boots.
+
+void Set_Tasks_Preemptable(bool preemptable);
 
 #ifdef __cplusplus
 }

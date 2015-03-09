@@ -66,6 +66,9 @@ typedef enum
     TASK_TERMINATE,
     TASK_NEXT,
     TASK_GET_ARG,
+	SERVICE_INIT,
+	SERVICE_SUBSCRIBE,
+	SERVICE_PUBLISH,
 }
 kernel_request_t;
 
@@ -107,6 +110,8 @@ struct td_struct
     int                             arg;
     /** The priority (type) of this task. */
     uint8_t                         level;
+	/** The pointer to this task's service data if it is subscribed.*/
+	int16_t*						service_data;
 	/** The period (number of ticks) for a periodic task */
 	uint16_t						period;
 	/** The worst case estimated time for a periodic task */
@@ -117,11 +122,10 @@ struct td_struct
 	uint16_t						last;
 	/** The last time this task ran. */
 	bool							ran_once;
-	/** The remaining number of ticks. */
+	/** The number of ms running before the current scheduling of task. */
 	uint16_t						ticks_running_previous;
-	/** Ticks running without preemption. */
+	/** The number of ms currently running without preemption. */
 	uint16_t						ticks_running_no_preemp;
-	
     /** A link to the next task descriptor in the queue holding this task. */
     task_descriptor_t*              next;
 };

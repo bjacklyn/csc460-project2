@@ -16,7 +16,7 @@ void system() {
 void periodic1() {
 	for (;;)
 	{
-		_delay_ms(20);
+		_delay_ms(25);
 		Task_Create_System(system, 0);
 		_delay_ms(25);
 		Task_Next();
@@ -27,7 +27,7 @@ int r_main() {
     uart_init();
     set_trace_test(12);
 	
-    Task_Create_Periodic(periodic1, 0, 10, 40, 5); // run on 10th tick
+    Task_Create_Periodic(periodic1, 0, 10, 10, 5); // run on 5th tick
 
 	return 0;
 }
