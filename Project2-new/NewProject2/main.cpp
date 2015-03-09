@@ -3,9 +3,8 @@
 #include "kernel.h"
 #include "uart/uart.h"
 #include "trace/trace.h"
-#include "profile.h"
 
-#define USE_TEST_021
+#define USE_TEST_008
 
 #include "tests/test000_now.cpp"
 #include "tests/test001_now_roll_over.cpp" // takes 65 seconds to run

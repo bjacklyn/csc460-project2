@@ -23,8 +23,8 @@ main.d main.o: .././main.cpp .././main.h .././os.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\math.h \
- .././profile.h .././tests/test000_now.cpp \
- .././tests/test001_now_roll_over.cpp .././tests/test002_system_queue.cpp \
+ .././tests/test000_now.cpp .././tests/test001_now_roll_over.cpp \
+ .././tests/test002_system_queue.cpp \
  .././tests/test003_roundrobin_queue1.cpp \
  .././tests/test004_roundrobin_queue2.cpp \
  .././tests/test005_periodic_queue1.cpp \
@@ -96,8 +96,6 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\math.h:
-
-.././profile.h:
 
 .././tests/test000_now.cpp:
 
