@@ -51,7 +51,7 @@ int r_main() {
     set_trace_test(9);
 	
 	Task_Create_RR(rr1, 0);
-    Task_Create_Periodic(periodic1, 0, 5, 20, 5); // run on 10th tick
+    Task_Create_Periodic(periodic1, 0, 5, 20, 5); // run on 5th tick
 
 	return 0;
 }
