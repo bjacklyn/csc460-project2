@@ -1,7 +1,7 @@
 #ifdef USE_TEST_010
 /*
     Desired Trace
-    T010;1;10;2;10;3;15;
+    T010;1;50;2;50;3;55;
 */
 
 #include <avr/io.h>

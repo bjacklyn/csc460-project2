@@ -143,10 +143,34 @@
     <Compile Include="os.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="tests\test022_service_publish_from_interrupt.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test021_service_multiple_subscribe_and_publish.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test020_service_publish_all_task_levels.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test019_service_subscribe_non_existing_service.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test018_service_invalid_periodic_subscribe.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test017_service_subscribe_all_task_levels.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test016_service_init_too_many_services.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tests\test015_service_init.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="tests\test014_all_tasks.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="tests\test013_periodic_invalid_schedule.cpp">
+    <Compile Include="tests\test013_periodic_invalid_tasks_scheduling.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="tests\test012_periodic_invalid_wcet.cpp">
@@ -161,7 +185,7 @@
     <Compile Include="tests\test009_periodic_rr_queue1.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="tests\test008_periodic_queue4.cpp">
+    <Compile Include="tests\test008_periodic_valid_tasks_scheduling.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="tests\test007_periodic_queue3.cpp">

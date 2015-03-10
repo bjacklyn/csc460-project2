@@ -22,9 +22,10 @@ int r_main() {
     uart_init();
     set_trace_test(6);
 
-	
+	_delay_ms(2000);
+
     Task_Create_Periodic(periodic1, 0, 50, 100, 50); // run on 50th tick
-    Task_Create_Periodic(periodic2, 0, 50, 100, 70); // run on 70th tick
+	Task_Create_Periodic(periodic2, 0, 50, 100, 70); // run on 70th tick
 
 	return 0;
 }
