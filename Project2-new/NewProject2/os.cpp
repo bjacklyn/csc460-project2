@@ -171,15 +171,17 @@ static void kernel_dispatch(void)
         {
             cur_task = dequeue(&system_queue);
         }
-        else if (periodic_queue.head != NULL && ((now - periodic_queue.head->last) >= (periodic_queue.head->offset + periodic_queue.head->period)))
+        else if (periodic_queue.head != NULL && ((now - periodic_queue.head->last) >= 
+					(periodic_queue.head->offset + periodic_queue.head->period)))
         {
 			/* Keep running the current PERIODIC task. */
 			cur_task = dequeue(&periodic_queue);
 			
 			cur_task->last += cur_task->period + cur_task->offset;
-			cur_task->ticks_running_no_preemp = now;
+			cur_task->ms_running_no_preemp = now;
 			
-			if (periodic_queue.head != NULL && ((now - periodic_queue.head->last) >= (periodic_queue.head->offset + periodic_queue.head->period))) {
+			if (periodic_queue.head != NULL && ((now - periodic_queue.head->last) >= 
+					(periodic_queue.head->offset + periodic_queue.head->period))) {
 				error_msg = ERR_RUN_6_INVALID_PERIODIC_SCHEDULING;
 				OS_Abort();
 			}
@@ -239,8 +241,8 @@ static void kernel_handle_request(void)
             {
 				cur_task->state = READY;
 				if(cur_task->level == PERIODIC) {
-					cur_task->ticks_running_previous += Now() - cur_task->ticks_running_no_preemp;
-					cur_task->last -= cur_task->period;
+					cur_task->ms_running_cumulative += Now() - cur_task->ms_running_no_preemp;
+					cur_task->last -= (cur_task->offset + cur_task->period);
 					enqueue_periodic(cur_task);
 				} 
             }
@@ -275,13 +277,13 @@ static void kernel_handle_request(void)
 			break;
 
 	    case PERIODIC:
-			if(((Now() - cur_task->ticks_running_no_preemp) + cur_task->ticks_running_previous) > cur_task->wcet)
+			if(((Now() - cur_task->ms_running_no_preemp) + cur_task->ms_running_cumulative) > cur_task->wcet)
 			{
 				/* error handling */
 				error_msg = ERR_RUN_3_PERIODIC_TOOK_TOO_LONG;
 				OS_Abort();
 			} else {
-				cur_task->ticks_running_previous = (uint16_t) 0;
+				cur_task->ms_running_cumulative = (uint16_t) 0;
 			}
 		
 			if (!cur_task->ran_once)
@@ -710,8 +712,8 @@ static int kernel_create_task()
 		p->offset = (kernel_request_create_args.start - kernel_request_create_args.period) * TICK;
 		p->period = kernel_request_create_args.period * TICK;
 		p->wcet = kernel_request_create_args.wcet * TICK;
-		p->ticks_running_previous = (uint16_t) 0;
-		p->ticks_running_no_preemp = (uint16_t) 0;
+		p->ms_running_cumulative = (uint16_t) 0;
+		p->ms_running_no_preemp = (uint16_t) 0;
 		p->last = (uint16_t) 0;
 		p->ran_once = false;
 	}
@@ -757,11 +759,11 @@ static void kernel_terminate_task(void)
  */
 static void kernel_service_subscribe(void)
 {
-	uint8_t handle = get_service_handle();
+	uint8_t index = get_service_handle();
 	
 	/* Place this task in a queue. */
 	cur_task->state = WAITING;
-	enqueue(&service_queue[handle], cur_task);
+	enqueue(&service_queue[index], cur_task);
 }
 
 static void kernel_service_publish(void)
@@ -785,7 +787,7 @@ static void kernel_service_publish(void)
 		// periodic task somehow managed to become subscribed to a service
 		} else if (task_ptr->level == PERIODIC) {
 			/* Error code. */
-			error_msg = ERR_RUN_8_SUBSCRIBED_TO_NON_EXISTING_SERVICE;
+			error_msg = ERR_RUN_8_NON_EXISTING_SERVICE;
 			OS_Abort();
 		} else {
 			enqueue(&rr_queue, task_ptr);
@@ -799,8 +801,8 @@ static void kernel_service_publish(void)
 		switch(cur_task->level)
 		{
 			case PERIODIC:
-				cur_task->ticks_running_previous += Now() - cur_task->ticks_running_no_preemp;
-				cur_task->last -= cur_task->period;
+				cur_task->ms_running_cumulative += Now() - cur_task->ms_running_no_preemp;
+				cur_task->last -= (cur_task->offset + cur_task->period);
 				enqueue_periodic(cur_task);
 				break;
 				
@@ -828,7 +830,7 @@ static uint8_t get_service_handle(void)
 		if(handle < 0 || handle >= num_services_created)
 		{
 			/* Error code. */
-			error_msg = ERR_RUN_8_SUBSCRIBED_TO_NON_EXISTING_SERVICE;
+			error_msg = ERR_RUN_8_NON_EXISTING_SERVICE;
 			OS_Abort();
 		}
 		
@@ -934,7 +936,7 @@ static void kernel_update_ticker(void)
 	/* If Periodic task still running then error more than wcet */
 	if(cur_task != NULL && cur_task->level == PERIODIC && cur_task->state == RUNNING)
 	{
-		if(((Now() - cur_task->ticks_running_no_preemp) + cur_task->ticks_running_previous) > cur_task->wcet)
+		if(((Now() - cur_task->ms_running_no_preemp) + cur_task->ms_running_cumulative) > cur_task->wcet)
 		{
 			/* error handling */
 			error_msg = ERR_RUN_3_PERIODIC_TOOK_TOO_LONG;

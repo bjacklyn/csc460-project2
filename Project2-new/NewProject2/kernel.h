@@ -123,9 +123,9 @@ struct td_struct
 	/** The last time this task ran. */
 	bool							ran_once;
 	/** The number of ms running before the current scheduling of task. */
-	uint16_t						ticks_running_previous;
+	uint16_t						ms_running_cumulative;
 	/** The number of ms currently running without preemption. */
-	uint16_t						ticks_running_no_preemp;
+	uint16_t						ms_running_no_preemp;
     /** A link to the next task descriptor in the queue holding this task. */
     task_descriptor_t*              next;
 };
